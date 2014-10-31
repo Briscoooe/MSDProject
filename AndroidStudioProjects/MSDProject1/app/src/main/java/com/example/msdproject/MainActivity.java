@@ -7,26 +7,32 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Button;
 import android.widget.ArrayAdapter;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.content.Context;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends ListActivity {
 
-    String[] items = {"Beyonce", "Jay Z", "Ed Sheeran", "Lady Gaga", "Mumford and Sons"};
+    ///String[] items = {"Beyonce", "Jay Z", "Ed Sheeran", "Lady Gaga", "Mumford and Sons"};
     Button btn;
+
+    private static ArrayList<String> Concert_List = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items));
+        ///setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items));
 
         addListenerOnButton();
 
@@ -34,40 +40,39 @@ public class MainActivity extends ListActivity {
 
         try {
             db.open();
-            long id = db.insertConcert("TESTING", "2/18/2012", "agasgasg", "sdgsdg");
-            id = db.insertConcert("another test", "2/18/sdgs", "aaaaa", "bbbbb");
-            db.close();
+            db.insertConcert("Miley Cyrus", "The O2", "2/18/2012", "sdgsdg");
+            db.insertConcert("Beyonce", "Marley Park","2/18/2012", "bbbbb");
+            db.insertConcert("Beyonce", "Marley Park","2/18/2012", "bbbbb");
+            db.insertConcert("Beyonce", "Marley Park","2/18/2012", "bbbbb");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        try {
-            db.open();
-            Cursor c = db.getAllConcerts();
-            if (c.moveToFirst())
+        /*
+        db.getAllConcerts();
+
+        ArrayList<String> Concert_List = (ArrayList<String>) db.getAllConcerts();
+
+        ListView listView = (ListView) findViewById(android.R.id.list);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, Concert_List);
+
+        getListView().setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id)
             {
-                do
-                {
-                    DisplayRecord(c);
-                }
-                while (c.moveToNext());
+                Toast.makeText(getApplicationContext(),
+                        ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
+        });
+        */
 
     }
 
-    private void DisplayRecord(Cursor c)
-    {
-        Toast.makeText(this,
-                "id: " + c.getString(0) + "\n" +
-                "Name: " + c.getString(1) + "\n" +
-                "Venue: " + c.getString(2),
-                Toast.LENGTH_SHORT).show();
-    }
 
     public void addListenerOnButton() {
 
