@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/addTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="left"
+        android:paddingLeft="20sp"
+        android:text="@string/add"
+        android:textSize="25sp"
+        android:textStyle="bold" 
+        android:paddingTop="20sp"				/>
+    
+   <TableLayout
+       	android:id="@+id/addTable"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:stretchColumns="1"
+	    android:paddingLeft="20sp"
+	    android:layout_below="@+id/addTitle">
+	    <TableRow>
+	        <TextView
+	            android:text="@string/artistName"
+	            android:padding="3dip" />
+	        <EditText
+	            android:inputType="text"
+	            android:gravity="left"
+	            android:padding="3dip" />
+	    </TableRow>
+	    <TableRow>
+	        <TextView
+	            android:text="@string/venue"
+	            android:padding="3dip" />
+	        <EditText
+	            android:inputType="text"
+	            android:gravity="left"
+	            android:padding="3dip" />
+	    </TableRow>
+	    <TableRow>
+	        <TextView
+	            android:text="@string/date"
+	            android:padding="3dip" />
+	        <EditText
+	            android:inputType="text"
+	            android:gravity="left"
+	            android:padding="3dip" />
+	    </TableRow>
+	    <TableRow>
+	        <TextView
+	            android:text="@string/comments"
+	            android:padding="3dip" />
+	        <EditText
+	            android:inputType="text"
+	            android:gravity="left"
+	            android:padding="3dip" />
+	    </TableRow>
+	    
+	   
+
+    </TableLayout>
+    
+   <Button
+       android:id="@+id/addButton"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_below="@+id/addTable"
+       android:gravity="right"
+       android:text="@string/addButton"		/>
+
+</RelativeLayout>

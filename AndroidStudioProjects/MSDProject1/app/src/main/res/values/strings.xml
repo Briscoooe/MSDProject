@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MSDProject</string>
+    <string name="like">My Concerts</string>
+    <string name="add">Add new Concert</string>
+    <string name="enterArtist">Enter Artist Name</string>
+    <string name="addButton">Add</string>
+    <string name="addToast">Concert Added!</string>
+    <string name="artistName">Artist: </string>
+    <string name="venue">Venue: </string>
+    <string name="date">Date: </string>
+    <string name="comments">Comments: </string>
+    <string name="update">Update Concert</string>
+    <string name="updateButton">Update</string>
+    <string name="updateToast">Concert Updated!</string>
+    <string name="delete">Delete Concert</string>
+    <string name="deleteToast">Concert Deleted!</string>
+    <string name="deleteButton">Delete</string>
+    <string name="title_activity_update_concert">UpdateConcert</string>
+    <string name="title_activity_add_concert">AddConcert</string>
+    <string name="title_activity_delete_concert">DeleteConcert</string>
+    <string name="title_activity_database">Database</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_dbmanager">DBManager</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
