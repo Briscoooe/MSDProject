@@ -30,6 +30,7 @@
 	            android:padding="3dip" />
 	        <EditText
 	            android:inputType="text"
+                android:id="@+id/editName"
 	            android:gravity="left"
 	            android:padding="3dip" />
 	    </TableRow>
@@ -39,6 +40,7 @@
 	            android:padding="3dip" />
 	        <EditText
 	            android:inputType="text"
+                android:id="@+id/editVenue"
 	            android:gravity="left"
 	            android:padding="3dip" />
 	    </TableRow>
@@ -48,6 +50,7 @@
 	            android:padding="3dip" />
 	        <EditText
 	            android:inputType="text"
+                android:id="@+id/editDate"
 	            android:gravity="left"
 	            android:padding="3dip" />
 	    </TableRow>
@@ -57,6 +60,7 @@
 	            android:padding="3dip" />
 	        <EditText
 	            android:inputType="text"
+                android:id="@+id/editComments"
 	            android:gravity="left"
 	            android:padding="3dip" />
 	    </TableRow>
@@ -72,6 +76,7 @@
        android:layout_alignParentRight="true"
        android:layout_below="@+id/addTable"
        android:gravity="right"
-       android:text="@string/addButton"		/>
+       android:text="@string/addButton"
+       android:onClick="AddArtist" />
 
 </RelativeLayout>
