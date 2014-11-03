@@ -41,18 +41,6 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        Button btn2 = (Button)findViewById(R.id.deleteConcertButton);
-        btn2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, DeleteArtist.class);
-                startActivity(i);
-            }
-        });
-
-
-
         DBManager db =  new DBManager(this);
 
         try {

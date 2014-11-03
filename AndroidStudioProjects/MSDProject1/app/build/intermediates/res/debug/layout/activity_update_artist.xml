@@ -14,43 +14,70 @@
         android:paddingLeft="20sp"
         android:text="@string/update"
         android:textSize="25sp"
-        android:textStyle="bold" 
+        android:textStyle="bold"
         android:paddingTop="20sp"				/>
-    
-    <Spinner
-	    android:id="@+id/planets_spinner"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content" 
-   		android:layout_below="@+id/updateTitle"
-        android:paddingLeft="10sp"				/>
-   
-   <TableLayout
-       	android:id="@+id/updateTable"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:stretchColumns="1"
-	    android:paddingLeft="20sp"
-	    android:layout_below="@+id/planets_spinner">
-	    <TableRow>
-	        <TextView
-	            android:text="@string/artistName"
-	            android:padding="3dip" />
-	        <EditText
-	            android:inputType="text"
-	            android:gravity="left"
-	            android:padding="3dip" />
-	    </TableRow>
+
+    <TableLayout
+        android:id="@+id/addTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:paddingLeft="20sp"
+        android:layout_below="@+id/updateTitle">
+        <TableRow>
+            <TextView
+                android:text="@string/artistName"
+                android:padding="3dip" />
+            <EditText
+                android:inputType="text"
+                android:id="@+id/viewName"
+                android:gravity="left"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/venue"
+                android:padding="3dip" />
+            <EditText
+                android:inputType="text"
+                android:id="@+id/viewVenue"
+                android:gravity="left"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/date"
+                android:padding="3dip" />
+            <EditText
+                android:inputType="text"
+                android:id="@+id/viewDate"
+                android:gravity="left"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/comments"
+                android:padding="3dip" />
+            <EditText
+                android:inputType="text"
+                android:id="@+id/viewComments"
+                android:gravity="left"
+                android:padding="3dip" />
+        </TableRow>
+
+
 
     </TableLayout>
-    
-   <Button
-       android:id="@+id/updateButton"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignParentRight="true"
-       android:layout_below="@+id/updateTable"
-       android:gravity="right"
-       android:text="@string/updateButton"		/>
+
+    <Button
+        android:id="@+id/updateConcertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addTable"
+        android:gravity="right"
+        android:text="@string/updateButton"
+        android:onClick="AddArtist" />
 
 </RelativeLayout>
 <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_update_artist.xml -->

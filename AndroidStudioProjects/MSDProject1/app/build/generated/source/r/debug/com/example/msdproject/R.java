@@ -1321,7 +1321,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f070030;
         public static final int action_mode_bar_stub=0x7f07002f;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f070056;
+        public static final int action_settings=0x7f070055;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int addButton=0x7f070047;
         public static final int addConcertButton=0x7f07004c;
@@ -1335,7 +1335,7 @@ containing a value of this type.
         public static final int decor_content_parent=0x7f070031;
         public static final int default_activity_button=0x7f070026;
         public static final int deleteButton=0x7f07004a;
-        public static final int deleteConcertButton=0x7f07004d;
+        public static final int deleteConcertButton=0x7f070054;
         public static final int deleteTitle=0x7f070048;
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070009;
@@ -1384,15 +1384,14 @@ containing a value of this type.
         public static final int title=0x7f070029;
         public static final int top=0x7f070015;
         public static final int up=0x7f07001f;
-        public static final int updateButton=0x7f070050;
-        public static final int updateTable=0x7f07004f;
-        public static final int updateTitle=0x7f07004e;
+        public static final int updateConcertButton=0x7f070052;
+        public static final int updateTitle=0x7f07004d;
         public static final int useLogo=0x7f070004;
-        public static final int viewComments=0x7f070055;
-        public static final int viewDate=0x7f070054;
-        public static final int viewName=0x7f070052;
-        public static final int viewTitle=0x7f070051;
-        public static final int viewVenue=0x7f070053;
+        public static final int viewComments=0x7f070051;
+        public static final int viewDate=0x7f070050;
+        public static final int viewName=0x7f07004e;
+        public static final int viewTitle=0x7f070053;
+        public static final int viewVenue=0x7f07004f;
         public static final int withText=0x7f070010;
         public static final int wrap_content=0x7f070014;
     }
