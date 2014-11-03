@@ -17,6 +17,7 @@
     <string name="delete">Delete Concert</string>
     <string name="deleteToast">Concert Deleted!</string>
     <string name="deleteButton">Delete</string>
+    <string name="viewConcert">View Concert</string>
     <string name="title_activity_update_concert">UpdateConcert</string>
     <string name="title_activity_add_concert">AddConcert</string>
     <string name="title_activity_delete_concert">DeleteConcert</string>
@@ -24,5 +25,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_dbmanager">DBManager</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_view_artist">ViewArtist</string>
 
 </resources>

@@ -18,8 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="50dp"
-        android:layout_alignBottom="@+id/button" />
+        android:layout_marginRight="50dp"/>
 
     <ListView
         android:id="@android:id/list"

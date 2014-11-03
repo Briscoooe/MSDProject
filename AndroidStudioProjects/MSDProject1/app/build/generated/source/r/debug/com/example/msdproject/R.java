@@ -1321,22 +1321,21 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f070030;
         public static final int action_mode_bar_stub=0x7f07002f;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f070052;
+        public static final int action_settings=0x7f070056;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int addButton=0x7f070047;
-        public static final int addConcertButton=0x7f07004d;
+        public static final int addConcertButton=0x7f07004c;
         public static final int addTable=0x7f070042;
         public static final int addTitle=0x7f070041;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
         public static final int bottom=0x7f070016;
-        public static final int button=0x7f07004c;
         public static final int checkbox=0x7f07002b;
         public static final int collapseActionView=0x7f070011;
         public static final int decor_content_parent=0x7f070031;
         public static final int default_activity_button=0x7f070026;
         public static final int deleteButton=0x7f07004a;
-        public static final int deleteConcertButton=0x7f07004e;
+        public static final int deleteConcertButton=0x7f07004d;
         public static final int deleteTitle=0x7f070048;
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070009;
@@ -1385,10 +1384,15 @@ containing a value of this type.
         public static final int title=0x7f070029;
         public static final int top=0x7f070015;
         public static final int up=0x7f07001f;
-        public static final int updateButton=0x7f070051;
-        public static final int updateTable=0x7f070050;
-        public static final int updateTitle=0x7f07004f;
+        public static final int updateButton=0x7f070050;
+        public static final int updateTable=0x7f07004f;
+        public static final int updateTitle=0x7f07004e;
         public static final int useLogo=0x7f070004;
+        public static final int viewComments=0x7f070055;
+        public static final int viewDate=0x7f070054;
+        public static final int viewName=0x7f070052;
+        public static final int viewTitle=0x7f070051;
+        public static final int viewVenue=0x7f070053;
         public static final int withText=0x7f070010;
         public static final int wrap_content=0x7f070014;
     }
@@ -1424,10 +1428,12 @@ containing a value of this type.
         public static final int activity_delete_artist=0x7f030019;
         public static final int activity_main=0x7f03001a;
         public static final int activity_update_artist=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int activity_view_artist=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int menu_dbmanager=0x7f0c0000;
+        public static final int menu_view_artist=0x7f0c0001;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;
@@ -1464,10 +1470,12 @@ containing a value of this type.
         public static final int title_activity_dbmanager=0x7f0a001f;
         public static final int title_activity_delete_concert=0x7f0a0020;
         public static final int title_activity_update_concert=0x7f0a0021;
-        public static final int update=0x7f0a0022;
-        public static final int updateButton=0x7f0a0023;
-        public static final int updateToast=0x7f0a0024;
-        public static final int venue=0x7f0a0025;
+        public static final int title_activity_view_artist=0x7f0a0022;
+        public static final int update=0x7f0a0023;
+        public static final int updateButton=0x7f0a0024;
+        public static final int updateToast=0x7f0a0025;
+        public static final int venue=0x7f0a0026;
+        public static final int viewConcert=0x7f0a0027;
     }
     public static final class style {
         /** 

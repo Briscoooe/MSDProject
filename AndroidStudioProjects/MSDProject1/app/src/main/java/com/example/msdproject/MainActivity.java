@@ -24,6 +24,8 @@ import java.util.List;
 
 public class MainActivity extends ListActivity {
 
+    public ArrayList<String> data_list=new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,22 +52,16 @@ public class MainActivity extends ListActivity {
         });
 
 
+
         DBManager db =  new DBManager(this);
 
         try {
             db.open();
-            /*
-            db.insertConcert("Miley Cyrus", "The O2", "2/18/2012", "sdgsdg");
-            db.insertConcert("Beyonce", "Marley Park","2/18/2012", "bbbbb");
-            db.insertConcert("One Direction", "Croke Park","2/18/2012", "bbbbb");
-            db.insertConcert("u2", "Slane Castle","2/18/2012", "bbbbb");
-            */
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
 
-        ArrayList<String> data_list=new ArrayList<String>();
         ListView listView = (ListView) findViewById(android.R.id.list);
         Cursor c = db.getAllConcerts();
         if (c.moveToFirst())
@@ -81,8 +77,10 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        Intent i = new Intent(MainActivity.this,UpdateArtist.class);
+        Intent i =  new Intent(MainActivity.this, ViewArtist.class);
+        i.putExtra("id", id);
         startActivity(i);
+
     }
 
 

@@ -50,6 +50,10 @@
             android:name="com.example.msdproject.DBManager"
             android:label="@string/title_activity_dbmanager" >
         </activity>
+        <activity
+            android:name="com.example.msdproject.ViewArtist"
+            android:label="@string/title_activity_view_artist" >
+        </activity>
     </application>
 
 </manifest>

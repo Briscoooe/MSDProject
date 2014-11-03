@@ -194,10 +194,12 @@
     <string name="title_activity_dbmanager">DBManager</string>
     <string name="title_activity_delete_concert">DeleteConcert</string>
     <string name="title_activity_update_concert">UpdateConcert</string>
+    <string name="title_activity_view_artist">ViewArtist</string>
     <string name="update">Update Concert</string>
     <string name="updateButton">Update</string>
     <string name="updateToast">Concert Updated!</string>
     <string name="venue">Venue: </string>
+    <string name="viewConcert">View Concert</string>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">

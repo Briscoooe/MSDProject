@@ -4,11 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.content.Context;
 
 import java.sql.SQLException;
@@ -26,10 +21,19 @@ public class DBManager {
     private static final String DB_TABLE = "Concert_Info";
     private static final int DB_VERSION = 1;
 
+    /*
     private static final String DB_CREATE =
-            "create table Concert_Info (_id integer primary key autoincrement, name text not null, " +
-            "venue text not null, date text not null, " +
-            "comments text not null);";
+            "create table " + DB_TABLE +  " (" + COL_ROWID + " integer primary key autoincrement, " + COL_NAME  + " text not null, " +
+                    COL_VENUE + " text not null, " + COL_DATE + " text not null, " +
+                    COL_COMMENTS + " text not null);";*/
+
+    private static final String DB_CREATE =
+            "create table " + DB_TABLE + 
+    " (_id integer primary key autoincrement, " +
+            "name text not null, " +
+            "venue text not null, " +
+            "comments text not null, " +
+            "date text not null);";
 
     private final Context context;
 
@@ -53,7 +57,6 @@ public class DBManager {
         public void onCreate(SQLiteDatabase db)
         {
             db.execSQL(DB_CREATE);
-            db.execSQL("DROP TABLE IF EXISTS " + DB_TABLE);
         }
 
         @Override
@@ -71,6 +74,7 @@ public class DBManager {
     public DBManager open() throws SQLException
     {
         db = DBHelper.getWritableDatabase();
+        //db.execSQL("DROP TABLE IF EXISTS " + DB_TABLE + ";");
         return this;
     }
 
@@ -145,5 +149,4 @@ public class DBManager {
         return db.update(DB_TABLE, args, COL_ROWID  + "=" + ROW_ID, null) > 0;
 
     }
-
 }
