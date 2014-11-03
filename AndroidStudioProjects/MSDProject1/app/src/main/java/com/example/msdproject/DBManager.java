@@ -53,6 +53,7 @@ public class DBManager {
         public void onCreate(SQLiteDatabase db)
         {
             db.execSQL(DB_CREATE);
+            db.execSQL("DROP TABLE IF EXISTS " + DB_TABLE);
         }
 
         @Override

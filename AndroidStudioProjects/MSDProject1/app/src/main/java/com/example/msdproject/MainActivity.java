@@ -17,33 +17,49 @@ import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.RowId;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends ListActivity {
 
-    ///String[] items = {"Beyonce", "Jay Z", "Ed Sheeran", "Lady Gaga", "Mumford and Sons"};
-    Button btn;
-
-    private static ArrayList<String> Concert_List = new ArrayList<String>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ///setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items));
 
-        addListenerOnButton();
+        Button btn = (Button)findViewById(R.id.addConcertButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AddArtist.class);
+                startActivity(i);
+            }
+        });
+
+        Button btn2 = (Button)findViewById(R.id.deleteConcertButton);
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DeleteArtist.class);
+                startActivity(i);
+            }
+        });
+
 
         DBManager db =  new DBManager(this);
 
         try {
             db.open();
+            /*
             db.insertConcert("Miley Cyrus", "The O2", "2/18/2012", "sdgsdg");
             db.insertConcert("Beyonce", "Marley Park","2/18/2012", "bbbbb");
             db.insertConcert("One Direction", "Croke Park","2/18/2012", "bbbbb");
             db.insertConcert("u2", "Slane Castle","2/18/2012", "bbbbb");
+            */
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -55,32 +71,20 @@ public class MainActivity extends ListActivity {
         if (c.moveToFirst())
         {
             do {
-                data_list.add(c.getString(1));
+                data_list.add(c.getString(0));
             } while (c.moveToNext());
         }
         ArrayAdapter<String> aa=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
         listView.setAdapter(aa);
+    }
 
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        Intent i = new Intent(MainActivity.this,UpdateArtist.class);
+        startActivity(i);
     }
 
 
-    public void addListenerOnButton() {
 
-        final Context context = this;
-
-        btn = (Button) findViewById(R.id.addConcertButton);
-
-        btn.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(context, AddArtist.class);
-                startActivity(intent);
-
-            }
-
-        });
-
-    }
 }

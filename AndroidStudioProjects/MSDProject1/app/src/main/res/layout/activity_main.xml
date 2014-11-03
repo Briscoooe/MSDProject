@@ -2,20 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
         android:id="@+id/likeTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:gravity="left"
         android:paddingLeft="20sp"
         android:text="@string/like"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:paddingTop="20sp"				/>
+        android:paddingTop="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="50dp"
+        android:layout_alignBottom="@+id/button" />
 
     <ListView
         android:id="@android:id/list"
@@ -23,14 +27,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/likeTitle"
         android:layout_above="@+id/addConcertButton"
-        android:paddingLeft="10sp" />
+        android:paddingLeft="10sp"
+        android:theme="@style/ListFont"
+        />
 
     <Button
         android:id="@+id/addConcertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="trgitue"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/add" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Database"
+        android:id="@+id/deleteConcertButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/addConcertButton"
+        android:layout_alignStart="@+id/addConcertButton" />
 
 </RelativeLayout>
