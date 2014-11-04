@@ -83,6 +83,11 @@ public class DBManager {
         DBHelper.close();
     }
 
+    public long getId(String name)
+    {
+        long x = 10;
+        return x;
+    }
     public long insertConcert(String name, String venue, String date, String comments)
     {
         ContentValues initialValues = new ContentValues();
@@ -96,6 +101,11 @@ public class DBManager {
     public boolean deleteConcert(long ROW_ID)
     {
         return db.delete(DB_TABLE, COL_ROWID + "=" + ROW_ID, null) > 0;
+    }
+
+    public void deleteAllRecords()
+    {
+        db.execSQL("DELETE * FROM CONCERT_INFO WHERE NAME = NOT NULL");
     }
 
     public Cursor getAllConcerts() {
@@ -148,5 +158,11 @@ public class DBManager {
         args.put(COL_COMMENTS, comments);
         return db.update(DB_TABLE, args, COL_ROWID  + "=" + ROW_ID, null) > 0;
 
+    }
+
+    public void reset () throws SQLException {
+        db.delete(DB_TABLE, null, null);
+        db.close();
+        this.DBHelper.onCreate (this.db);
     }
 }

@@ -30,7 +30,7 @@
                 android:padding="3dip" />
             <EditText
                 android:inputType="text"
-                android:id="@+id/viewName"
+                android:id="@+id/updateName"
                 android:gravity="left"
                 android:padding="3dip" />
         </TableRow>
@@ -40,7 +40,7 @@
                 android:padding="3dip" />
             <EditText
                 android:inputType="text"
-                android:id="@+id/viewVenue"
+                android:id="@+id/updateVenue"
                 android:gravity="left"
                 android:padding="3dip" />
         </TableRow>
@@ -50,7 +50,7 @@
                 android:padding="3dip" />
             <EditText
                 android:inputType="text"
-                android:id="@+id/viewDate"
+                android:id="@+id/updateDate"
                 android:gravity="left"
                 android:padding="3dip" />
         </TableRow>
@@ -60,7 +60,7 @@
                 android:padding="3dip" />
             <EditText
                 android:inputType="text"
-                android:id="@+id/viewComments"
+                android:id="@+id/updateComments"
                 android:gravity="left"
                 android:padding="3dip" />
         </TableRow>

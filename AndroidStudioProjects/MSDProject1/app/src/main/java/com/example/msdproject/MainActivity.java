@@ -44,6 +44,14 @@ public class MainActivity extends ListActivity {
         DBManager db =  new DBManager(this);
 
         try {
+            db.reset();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        db.deleteAllRecords();
+
+        try {
             db.open();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -55,7 +63,7 @@ public class MainActivity extends ListActivity {
         if (c.moveToFirst())
         {
             do {
-                data_list.add(c.getString(0));
+                data_list.add(c.getString(1));
             } while (c.moveToNext());
         }
         ArrayAdapter<String> aa=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
