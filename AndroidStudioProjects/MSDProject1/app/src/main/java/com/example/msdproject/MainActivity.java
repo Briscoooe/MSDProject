@@ -1,3 +1,17 @@
+/*
+*************** TO DO ****************
+- look at rawQuery()
+- look at passing in name rather than ROW_ID
+- custom list layout (look at downloaded list zip file)
+- Make sure input screens have error checking to ensure all text boxes are filled
+- Reference all code
+- Use extra features, phone sensors, location/map, email. Location of venue (?)
+- rename buttons from btn1 etc.
+- ensure all strings are located in strings.xml
+- global theme (look up)
+- comment each java file + comment code
+ */
+
 package com.example.msdproject;
 
 import android.app.Activity;
@@ -43,13 +57,25 @@ public class MainActivity extends ListActivity {
 
         DBManager db =  new DBManager(this);
 
+
+        /*
         try {
             db.reset();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
 
-        db.deleteAllRecords();
+        /*
+        The list is showing the first attribute on the list (artist),
+        When I added artist1 (ROW_ID = 1) nothing pops up on the view screen,
+        when I added 0 (ROW_ID = 2) as the artist, all of the artist1 info pops up.
+
+        Conclusion: When a list item is clicked, the previous ROW_ID Pops up.
+
+        Solutions:  1. ROW_ID + 1/ -1 passed into view screen
+                    2. Fix 0/1 being passed into view screen
+
+        */
 
         try {
             db.open();
@@ -63,11 +89,12 @@ public class MainActivity extends ListActivity {
         if (c.moveToFirst())
         {
             do {
-                data_list.add(c.getString(1));
+                data_list.add(c.getString(0));
             } while (c.moveToNext());
         }
-        ArrayAdapter<String> aa=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
-        listView.setAdapter(aa);
+        ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
+        listView.setAdapter(concertList);
+        concertList.notifyDataSetChanged();
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -78,7 +105,4 @@ public class MainActivity extends ListActivity {
         startActivity(i);
 
     }
-
-
-
 }

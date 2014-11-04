@@ -46,8 +46,10 @@ public class DBManager {
         DBHelper = new DatabaseHelper(context);
     }
 
+    //embedded class
     public static class DatabaseHelper extends SQLiteOpenHelper
     {
+        //context refers to activity that called it
         DatabaseHelper(Context context)
         {
             super(context, DB_NAME, null, DB_VERSION);
@@ -103,11 +105,6 @@ public class DBManager {
         return db.delete(DB_TABLE, COL_ROWID + "=" + ROW_ID, null) > 0;
     }
 
-    public void deleteAllRecords()
-    {
-        db.execSQL("DELETE * FROM CONCERT_INFO WHERE NAME = NOT NULL");
-    }
-
     public Cursor getAllConcerts() {
         return db.query(DB_TABLE, new String[]
                         {
@@ -147,6 +144,19 @@ public class DBManager {
         }
 
         return mCursor;
+
+         /*
+         could also be done as
+                        null,
+                        null,
+                        COL_VENUE + "=" + DATE,
+                        null,
+                        null
+
+                        or remove unnecessary items in string[]
+                        LEAVE nulls the way they are
+
+                         */
     }
 
     public boolean updateConcert(long ROW_ID, String name, String venue, String date, String comments)
