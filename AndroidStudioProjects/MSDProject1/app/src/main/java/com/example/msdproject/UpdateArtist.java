@@ -48,6 +48,7 @@ public class UpdateArtist extends Activity {
                     final EditText dateTxt = (EditText)findViewById(R.id.updateDate);
                     final EditText commentsTxt = (EditText)findViewById(R.id.updateComments);
 
+                    
                     titleTxt.setText("Update " + name);
                     nameTxt.setText(name);
                     venueTxt.setText(venue);
@@ -57,17 +58,29 @@ public class UpdateArtist extends Activity {
                     Button btn = (Button)findViewById(R.id.updateConcertButton);
                     btn.setOnClickListener(new View.OnClickListener()
                     {
-
                         @Override
-                        public void onClick(View v) {
-                            long id = db.updateConcert(num , nameTxt.getText().toString(),
-                                    venueTxt.getText().toString(),
-                                    dateTxt.getText().toString(),
-                                    commentsTxt.getText().toString());
+                        public void onClick(View v)
+                        {
+                            db.updateConcert(nameTxt.getText().toString(),
+                                            venueTxt.getText().toString(),
+                                            dateTxt.getText().toString(),
+                                            commentsTxt.getText().toString());
                             db.close();
-
                         }
                     });
+
+                    /*
+                    EditText nameTxt = (EditText)findViewById(R.id.editName);
+                    EditText venueTxt = (EditText)findViewById(R.id.editVenue);
+                    EditText dateTxt = (EditText)findViewById(R.id.editDate);
+                    EditText commentsTxt = (EditText)findViewById(R.id.editComments);
+
+                    db.open();
+                    long id = db.insertConcert(nameTxt.getText().toString(),
+                            venueTxt.getText().toString(),
+                            dateTxt.getText().toString(),
+                            commentsTxt.getText().toString());
+                    db.close();*/
 
                 } while (c.moveToNext());
             }

@@ -159,6 +159,7 @@ public class DBManager {
                          */
     }
 
+    /*
     public boolean updateConcert(long ROW_ID, String name, String venue, String date, String comments)
     {
         ContentValues args = new ContentValues();
@@ -168,11 +169,21 @@ public class DBManager {
         args.put(COL_COMMENTS, comments);
         return db.update(DB_TABLE, args, COL_ROWID  + "=" + ROW_ID, null) > 0;
 
+    }*/
+
+    public boolean updateConcert(String name, String venue, String date, String comments)
+    {
+        ContentValues updateValues = new ContentValues();
+        updateValues.put(COL_NAME, name);
+        updateValues.put(COL_VENUE, venue);
+        updateValues.put(COL_DATE, date);
+        updateValues.put(COL_COMMENTS, comments);
+        return db.update(DB_TABLE, updateValues, COL_NAME  + "=" + name, null) > 0;
     }
 
     public void reset () throws SQLException {
         db.delete(DB_TABLE, null, null);
         db.close();
-        this.DBHelper.onCreate (this.db);
+        this.DBHelper.onCreate(this.db);
     }
 }

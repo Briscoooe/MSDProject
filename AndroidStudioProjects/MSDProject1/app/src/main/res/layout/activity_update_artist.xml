@@ -77,6 +77,6 @@
         android:layout_below="@+id/addTable"
         android:gravity="right"
         android:text="@string/updateButton"
-        android:onClick="AddArtist" />
+        android:onClick="UpdateArtist" />
 
 </RelativeLayout>

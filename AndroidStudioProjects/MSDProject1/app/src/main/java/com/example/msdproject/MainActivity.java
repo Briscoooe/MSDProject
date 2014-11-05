@@ -5,6 +5,7 @@
 - custom list layout (look at downloaded list zip file)
 - Make sure input screens have error checking to ensure all text boxes are filled
 - Reference all code
+- look at try/catch to ensure cleanliness
 - Use extra features, phone sensors, location/map, email. Location of venue (?)
 - rename buttons from btn1 etc.
 - ensure all strings are located in strings.xml
@@ -57,7 +58,6 @@ public class MainActivity extends ListActivity {
 
         DBManager db =  new DBManager(this);
 
-
         /*
         try {
             db.reset();
@@ -83,6 +83,13 @@ public class MainActivity extends ListActivity {
             e.printStackTrace();
         }
 
+        /*
+        db.insertConcert("Concert 1", "1", "1", "1");
+        db.insertConcert("Concert 2", "2", "2", "2");
+        db.insertConcert("Concert 3", "3", "3", "3");
+        db.insertConcert("Concert 4", "4", "4", "4");
+        */
+
 
         ListView listView = (ListView) findViewById(android.R.id.list);
         Cursor c = db.getAllConcerts();
@@ -95,6 +102,8 @@ public class MainActivity extends ListActivity {
         ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
         listView.setAdapter(concertList);
         concertList.notifyDataSetChanged();
+
+        db.close();
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -105,4 +114,5 @@ public class MainActivity extends ListActivity {
         startActivity(i);
 
     }
+
 }
