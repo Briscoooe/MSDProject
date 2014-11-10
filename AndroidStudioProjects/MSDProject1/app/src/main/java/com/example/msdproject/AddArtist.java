@@ -40,5 +40,6 @@ public class AddArtist extends Activity {
         commentsTxt.setText("");
 
         Toast.makeText(AddArtist.this, "Concert Added", Toast.LENGTH_LONG).show();
+        super.finish();
     }
 }

@@ -1330,7 +1330,6 @@ containing a value of this type.
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
         public static final int bottom=0x7f070016;
-        public static final int button=0x7f07004d;
         public static final int checkbox=0x7f07002b;
         public static final int collapseActionView=0x7f070011;
         public static final int decor_content_parent=0x7f070031;
@@ -1365,6 +1364,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f07001c;
         public static final int progress_horizontal=0x7f07001d;
         public static final int radio=0x7f07002d;
+        public static final int refreshButton=0x7f07004d;
         public static final int search_badge=0x7f070037;
         public static final int search_bar=0x7f070036;
         public static final int search_button=0x7f070038;

@@ -359,7 +359,6 @@ int id addTitle 0x7f070041
 int id always 0x7f07000f
 int id beginning 0x7f07000a
 int id bottom 0x7f070016
-int id button 0x7f07004d
 int id checkbox 0x7f07002b
 int id collapseActionView 0x7f070011
 int id decor_content_parent 0x7f070031
@@ -394,6 +393,7 @@ int id planets_spinner 0x7f070049
 int id progress_circular 0x7f07001c
 int id progress_horizontal 0x7f07001d
 int id radio 0x7f07002d
+int id refreshButton 0x7f07004d
 int id search_badge 0x7f070037
 int id search_bar 0x7f070036
 int id search_button 0x7f070038
