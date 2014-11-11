@@ -55,8 +55,8 @@ public class UpdateArtist extends Activity {
                     dateTxt.setText(date);
                     commentsTxt.setText(comments);
 
-                    Button btn = (Button)findViewById(R.id.updateConcertButton);
-                    btn.setOnClickListener(new View.OnClickListener()
+                    Button update = (Button)findViewById(R.id.updateConcertButton);
+                    update.setOnClickListener(new View.OnClickListener()
                     {
                         @Override
                         public void onClick(View v)

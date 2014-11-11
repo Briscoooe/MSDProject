@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
@@ -21,13 +20,14 @@
         android:layout_marginRight="50dp"/>
 
     <ListView
+        android:cacheColorHint="#00000000"
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/likeTitle"
         android:layout_above="@+id/addConcertButton"
         android:paddingLeft="10sp"
-        android:cacheColorHint="#000000"
+        android:textColor="@android:color/black"
         android:theme="@style/ListFont"
         />
 

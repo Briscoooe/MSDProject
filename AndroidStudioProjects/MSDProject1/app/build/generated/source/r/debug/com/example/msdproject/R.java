@@ -1321,7 +1321,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f070030;
         public static final int action_mode_bar_stub=0x7f07002f;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f07005a;
+        public static final int action_settings=0x7f07005b;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int addButton=0x7f070047;
         public static final int addConcertButton=0x7f07004c;
@@ -1353,6 +1353,7 @@ containing a value of this type.
         public static final int icon=0x7f070028;
         public static final int ifRoom=0x7f07000e;
         public static final int image=0x7f070025;
+        public static final int label=0x7f07005a;
         public static final int likeTitle=0x7f07004b;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070027;
@@ -1433,7 +1434,8 @@ containing a value of this type.
         public static final int activity_main=0x7f03001a;
         public static final int activity_update_artist=0x7f03001b;
         public static final int activity_view_artist=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int row_layout=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int menu_dbmanager=0x7f0c0000;

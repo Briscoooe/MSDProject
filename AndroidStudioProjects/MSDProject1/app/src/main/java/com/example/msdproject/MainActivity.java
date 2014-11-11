@@ -2,12 +2,11 @@
 *************** TO DO ****************
 - look at rawQuery()
 - look at passing in name rather than ROW_ID
-- custom list layout (look at downloaded list zip file)
 - Make sure input screens have error checking to ensure all text boxes are filled
 - Reference all code
 - look at try/catch to ensure cleanliness
 - Use extra features, phone sensors, location/map, email. Location of venue (?)
-- rename buttons from btn1 etc.
+- possibly have pencil icon for editing artist
 - ensure all strings are located in strings.xml
 - global theme (look up)
 - comment each java file + comment code
@@ -39,8 +38,8 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn = (Button)findViewById(R.id.addConcertButton);
-        btn.setOnClickListener(new View.OnClickListener()
+        Button add = (Button)findViewById(R.id.addConcertButton);
+        add.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
@@ -62,13 +61,6 @@ public class MainActivity extends ListActivity {
             e.printStackTrace();
         }
 
-        /*
-        db.insertConcert("Concert 1", "1", "1", "1");
-        db.insertConcert("Concert 2", "2", "2", "2");
-        db.insertConcert("Concert 3", "3", "3", "3");
-        db.insertConcert("Concert 4", "4", "4", "4");
-        */
-
 
         ListView listView = (ListView) findViewById(android.R.id.list);
         Cursor c = db.getAllConcerts();
@@ -78,31 +70,27 @@ public class MainActivity extends ListActivity {
                 data_list.add(c.getString(0));
             } while (c.moveToNext());
         }
-        ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
+        //ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(),
+                                        //R.layout.row_layout,R.id.label, data_list);
+        ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(),
+                                            android.R.layout.simple_list_item_1, data_list);
         listView.setAdapter(concertList);
 
         //db.close();
     }
 
-    /*
+
     public void onResume()
     {
         super.onResume();
-
-        ListView listView = (ListView) findViewById(android.R.id.list);
-        listView.setAdapter(null);
-        Cursor c = db.getAllConcerts();
-        if (c.moveToFirst())
-        {
-            do {
-                data_list.add(c.getString(0));
-            } while (c.moveToNext());
+        try {
+            db.open();
+            data_list = db.getAllConcerts();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data_list);
-        listView.setAdapter(concertList);
         concertList.notifyDataSetChanged();
-
-    }*/
+    }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
