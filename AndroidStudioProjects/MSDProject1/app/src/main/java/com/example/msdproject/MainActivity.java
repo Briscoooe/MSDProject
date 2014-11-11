@@ -24,12 +24,14 @@ import android.widget.ArrayAdapter;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import android.util.Log;
 
 
 public class MainActivity extends ListActivity {
 
     public ArrayList<String> data_list=new ArrayList<String>();
     DBManager db =  new DBManager(this);
+    ArrayAdapter<String> concertList;
 
 
     @Override
@@ -55,13 +57,44 @@ public class MainActivity extends ListActivity {
             e.printStackTrace();
         }*/
 
-        try {
+        try
+        {
             db.open();
-        } catch (SQLException e) {
+        }
+
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
 
+        addData();
+        //db.close();
+    }
 
+
+
+    public void onResume()
+    {
+        super.onResume();
+        ///data_list.clear();
+        addData();
+        /*
+        data_list.clear();
+        Cursor c = db.getAllConcerts();
+        if (c.moveToFirst())
+        {
+            do {
+                data_list.add(c.getString(0));
+            } while (c.moveToNext());
+        }
+        concertList.notifyDataSetChanged();*/
+
+    }
+
+    public void addData()
+    {
+        //concertList.notifyDataSetChanged();
+        data_list.clear();
         ListView listView = (ListView) findViewById(android.R.id.list);
         Cursor c = db.getAllConcerts();
         if (c.moveToFirst())
@@ -71,25 +104,11 @@ public class MainActivity extends ListActivity {
             } while (c.moveToNext());
         }
         //ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(),
-                                        //R.layout.row_layout,R.id.label, data_list);
-        ArrayAdapter<String> concertList=new ArrayAdapter<String>(getApplicationContext(),
-                                            android.R.layout.simple_list_item_1, data_list);
+        //R.layout.row_layout,R.id.label, data_list);
+        ArrayAdapter<String> concertList = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_list_item_1, data_list);
         listView.setAdapter(concertList);
 
-        //db.close();
-    }
-
-
-    public void onResume()
-    {
-        super.onResume();
-        try {
-            db.open();
-            data_list = db.getAllConcerts();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        concertList.notifyDataSetChanged();
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
