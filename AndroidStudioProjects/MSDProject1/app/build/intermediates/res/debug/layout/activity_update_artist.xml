@@ -5,6 +5,7 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
+        style="@style/AppTheme"
         android:id="@+id/updateTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -19,50 +20,75 @@
 
     <TableLayout
         android:id="@+id/addTable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="1"
-        android:paddingLeft="20sp"
-        android:layout_below="@+id/updateTitle">
-        <TableRow>
+        style="@style/my_table">
+        <TableRow
+            style="@style/Table_Layout">
             <TextView
                 android:text="@string/artistName"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+        </TableRow>
+        <TableRow>
             <EditText
                 android:inputType="text"
+                android:layout_width="wrap_content"
                 android:id="@+id/updateName"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
         </TableRow>
+
         <TableRow>
             <TextView
                 android:text="@string/venue"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textStyle="bold"
+                android:textSize="25dp" />
+        </TableRow>
+        <TableRow>
             <EditText
                 android:inputType="text"
                 android:id="@+id/updateVenue"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
         </TableRow>
+
         <TableRow>
             <TextView
                 android:text="@string/date"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textStyle="bold"
+                android:textSize="25dp" />
+        </TableRow>
+        <TableRow>
             <EditText
                 android:inputType="text"
                 android:id="@+id/updateDate"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
         </TableRow>
+
         <TableRow>
             <TextView
                 android:text="@string/comments"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textStyle="bold"
+                android:textSize="25dp" />
+        </TableRow>
+        <TableRow>
             <EditText
                 android:inputType="text"
                 android:id="@+id/updateComments"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
         </TableRow>
 
 
@@ -76,8 +102,10 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/addTable"
         android:gravity="right"
+        android:layout_margin="20sp"
         android:text="@string/updateButton"
-        android:onClick="UpdateArtist" />
+        android:onClick="UpdateArtist"
+        android:textAlignment="center" />
 
 </RelativeLayout>
 <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_update_artist.xml -->

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.SQLException;
 
@@ -61,11 +62,21 @@ public class UpdateArtist extends Activity {
                         @Override
                         public void onClick(View v)
                         {
-                            db.updateConcert(nameTxt.getText().toString(),
-                                            venueTxt.getText().toString(),
-                                            dateTxt.getText().toString(),
-                                            commentsTxt.getText().toString());
-                            db.close();
+                            if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
+                                    dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty() )
+                            {
+                                Toast.makeText(UpdateArtist.this, "Error! Please fill in all fields", Toast.LENGTH_LONG).show();
+                            }
+                            else
+                            {
+                                db.updateConcert(nameTxt.getText().toString(),
+                                        venueTxt.getText().toString(),
+                                        dateTxt.getText().toString(),
+                                        commentsTxt.getText().toString());
+                                db.close();
+                                Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
+                                //super.finish();
+                            }
                         }
                     });
 

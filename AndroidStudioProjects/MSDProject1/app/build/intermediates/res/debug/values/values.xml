@@ -179,7 +179,7 @@
     <string name="add">Add new Concert</string>
     <string name="addButton">Add</string>
     <string name="addToast">Concert Added!</string>
-    <string name="app_name">MSDProject</string>
+    <string name="app_name">My Concerts</string>
     <string name="artistName">Artist: </string>
     <string name="comments">Comments: </string>
     <string name="date">Date: </string>
@@ -1146,6 +1146,13 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
     <style name="RtlOverlay.Widget.AppCompat.SearchView.MagIcon" parent="android:Widget">
         <item name="android:layout_marginLeft">@dimen/abc_dropdownitem_text_padding_left</item>
     </style>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Table_Layout">
+        <item name="android:textSize">50dp</item>
+    </style>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
     <style name="TextAppearance.AppCompat.Body2" parent="Base.TextAppearance.AppCompat.Body2"/>
@@ -1264,4 +1271,13 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
     <style name="Widget.AppCompat.Spinner.DropDown.ActionBar" parent="Base.Widget.AppCompat.Spinner.DropDown.ActionBar"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="my_table">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stretchColumns">1</item>
+        <item name="android:paddingLeft">20sp</item>
+        <item name="android:layout_below">@+id/updateTitle</item>
+    </style>
 </resources>

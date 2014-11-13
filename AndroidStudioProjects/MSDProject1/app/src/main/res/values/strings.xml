@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MSDProject</string>
+    <string name="app_name">My Concerts</string>
     <string name="like">My Concerts</string>
     <string name="add">Add new Concert</string>
     <string name="enterArtist">Enter Artist Name</string>

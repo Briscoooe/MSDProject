@@ -107,11 +107,13 @@ public class DBManager {
     public Cursor getAllConcerts() {
         return db.query(DB_TABLE, new String[]
                         {
+                                COL_ROWID,
                                 COL_NAME,
                                 COL_VENUE,
                                 COL_DATE,
                                 COL_COMMENTS
                         },
+                        null,
                         null,
                         null,
                         null,

@@ -27,19 +27,29 @@ public class AddArtist extends Activity {
         EditText dateTxt = (EditText)findViewById(R.id.editDate);
         EditText commentsTxt = (EditText)findViewById(R.id.editComments);
 
-        db.open();
-        long id = db.insertConcert(nameTxt.getText().toString(),
-                                    venueTxt.getText().toString(),
-                                    dateTxt.getText().toString(),
-                                    commentsTxt.getText().toString());
-        db.close();
+        if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
+                dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty() )
+        {
+            Toast.makeText(AddArtist.this, "Error! Please fill in all fields", Toast.LENGTH_LONG).show();
+        }
 
-        nameTxt.setText("");
-        venueTxt.setText("");
-        dateTxt.setText("");
-        commentsTxt.setText("");
+        else
+        {
 
-        Toast.makeText(AddArtist.this, "Concert Added", Toast.LENGTH_LONG).show();
-        super.finish();
+            db.open();
+            long id = db.insertConcert(nameTxt.getText().toString(),
+                    venueTxt.getText().toString(),
+                    dateTxt.getText().toString(),
+                    commentsTxt.getText().toString());
+            db.close();
+
+            nameTxt.setText("");
+            venueTxt.setText("");
+            dateTxt.setText("");
+            commentsTxt.setText("");
+
+            Toast.makeText(AddArtist.this, "Concert Added", Toast.LENGTH_LONG).show();
+            super.finish();
+        }
     }
 }
