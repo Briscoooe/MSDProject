@@ -1,10 +1,12 @@
 package com.example.msdproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,9 +20,27 @@ public class AddArtist extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_artist);
+
+        Button add = (Button) findViewById(R.id.addButton);
+        add.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                try
+                {
+                    AddArtistButton();
+                }
+
+                catch (SQLException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
 	}
 
-    public void AddArtist (View v) throws SQLException
+    public void AddArtistButton () throws SQLException
     {
         EditText nameTxt = (EditText)findViewById(R.id.editName);
         EditText venueTxt = (EditText)findViewById(R.id.editVenue);

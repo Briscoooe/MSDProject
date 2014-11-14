@@ -1,15 +1,21 @@
 /*
 *************** TO DO ****************
 *
+* Plan for Friday:
+* Click to view, pencil to delete
+* make decent interface
+* "are you sure?" dialog box
+*
+* Monday:
 * Ask about why super.finish doesn't always work
 *
+* General:
 * look at rawQuery()
 - look at passing in name rather than ROW_ID
 - Reference all code
 - look at try/catch to ensure cleanliness
 - Use extra features, phone sensors, location/map, email. Location of venue (?)
-- possibly have pencil icon for editing artist
-- ensure all strings are located in strings.xml
+- examine all files in project (xml and java) to ensure no errors or warnings in sidebar
 - global theme (look up)
 - simple cursor adapter > 2 xml files needed, main_Activity + row.xml
 - comment each java file + comment code
@@ -65,12 +71,6 @@ public class MainActivity extends ListActivity {
             e.printStackTrace();
         }*/
 
-        try {
-            db.open();
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-
         addData();
         //db.close();
     }
@@ -98,6 +98,12 @@ public class MainActivity extends ListActivity {
     public void addData()
     {
 
+        try {
+            db.open();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
         data_list.clear();
         ListView listView = (ListView) findViewById(android.R.id.list);
         Cursor c = db.getAllConcerts();
@@ -108,8 +114,10 @@ public class MainActivity extends ListActivity {
             } while (c.moveToNext());
         }
         concertList = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, data_list);
+                R.layout.row_layout, R.id.text1, data_list);
         listView.setAdapter(concertList);
+
+        db.close();
 
 /*
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
@@ -125,12 +133,10 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        /*
-        Intent i =  new Intent(MainActivity.this, ViewArtist.class);
-        i.putExtra("id", id);
-        startActivity(i);*/
+        try
+        {
+            db.open();
 
-        try {
             Cursor c = db.getConcert(id);
             String string_id = c.getString(0);
             long long_id = Long.parseLong(string_id);
@@ -140,9 +146,27 @@ public class MainActivity extends ListActivity {
             i.putExtra("id", long_id);
             startActivity(i);
 
-        } catch (SQLException e) {
+            //possibly startactivityforresult
+            //return deleted row, delete it and update list
+
+            /*
+            AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+            Cursor c = dba.getsavedcontacts();
+            c.moveToPosition(info.position);
+            String id = c.getString(c.getColumnIndex(Constants.KEY_ID));
+            dba.open();
+            dba.deleteRow(Long.parseLong(id));//remove entry from database according to rowID
+            DATA.remove(info.position); //remove entry from arrayadapter, will remove entry from listview
+            adapter.notifyDataSetChanged();
+            c.close();*/
+        }
+
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
+
+        db.close();
     }
 
 }

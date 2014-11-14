@@ -99,9 +99,9 @@ public class DBManager {
         return db.insert(DB_TABLE, null, initialValues);
     }
 
-    public boolean deleteConcert(long ROW_ID)
+    public boolean deleteConcert(String name)
     {
-        return db.delete(DB_TABLE, COL_ROWID + "=" + ROW_ID, null) > 0;
+        return db.delete(DB_TABLE, COL_NAME + "=" + name, null) > 0;
     }
 
     public Cursor getAllConcerts() {

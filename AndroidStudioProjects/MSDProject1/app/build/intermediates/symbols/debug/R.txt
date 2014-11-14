@@ -337,8 +337,9 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f020030
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f020031
 int drawable abc_textfield_search_material 0x7f020032
 int drawable edit 0x7f020033
-int drawable ic_launcher 0x7f020034
-int drawable logo2 0x7f020035
+int drawable edit_white 0x7f020034
+int drawable ic_launcher 0x7f020035
+int drawable logo2 0x7f020036
 int id action_bar 0x7f070033
 int id action_bar_activity_content 0x7f070017
 int id action_bar_container 0x7f070032
@@ -352,7 +353,7 @@ int id action_menu_presenter 0x7f07001a
 int id action_mode_bar 0x7f070030
 int id action_mode_bar_stub 0x7f07002f
 int id action_mode_close_button 0x7f070022
-int id action_settings 0x7f07005c
+int id action_settings 0x7f07005b
 int id activity_chooser_view_content 0x7f070023
 int id addButton 0x7f070047
 int id addConcertButton 0x7f07004c
@@ -371,7 +372,6 @@ int id deleteTitle 0x7f070048
 int id dialog 0x7f070012
 int id disableHome 0x7f070009
 int id dropdown 0x7f070013
-int id edit 0x7f07005b
 int id editComments 0x7f070046
 int id editDate 0x7f070045
 int id editName 0x7f070043
@@ -385,7 +385,6 @@ int id homeAsUp 0x7f070006
 int id icon 0x7f070028
 int id ifRoom 0x7f07000e
 int id image 0x7f070025
-int id label 0x7f07005a
 int id likeTitle 0x7f07004b
 int id listMode 0x7f070001
 int id list_item 0x7f070027
@@ -415,6 +414,7 @@ int id showTitle 0x7f070007
 int id split_action_bar 0x7f07001e
 int id submit_area 0x7f07003e
 int id tabMode 0x7f070002
+int id text1 0x7f07005a
 int id title 0x7f070029
 int id top 0x7f070015
 int id up 0x7f07001f

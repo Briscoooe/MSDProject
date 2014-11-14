@@ -76,8 +76,7 @@
        android:layout_alignParentRight="true"
        android:layout_below="@+id/addTable"
        android:gravity="right"
-       android:text="@string/addButton"
-       android:onClick="AddArtist" />
+       android:text="@string/addButton" />
 
 </RelativeLayout>
 <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_add_artist.xml -->

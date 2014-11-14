@@ -18,18 +18,18 @@ public class UpdateArtist extends Activity {
 
     DBManager db = new DBManager(this);
 
-	@Override
+    public EditText nameTxt;
+    public EditText venueTxt;
+    public EditText dateTxt;
+    public EditText commentsTxt;
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_update_artist);
 
         Intent intent = getIntent();
         final long num = intent.getLongExtra("id", 1);
-
-        String name;
-        String venue;
-        String date;
-        String comments;
 
         try {
             db.open();
@@ -38,16 +38,16 @@ public class UpdateArtist extends Activity {
             {
                 do
                 {
-                    name = (c.getString(1));
-                    venue = (c.getString(2));
-                    date = (c.getString(3));
-                    comments = (c.getString(4));
+                    String name = (c.getString(1));
+                    String venue = (c.getString(2));
+                    String date = (c.getString(3));
+                    String comments = (c.getString(4));
 
                     TextView titleTxt = (TextView)findViewById(R.id.updateTitle);
-                    final EditText nameTxt = (EditText)findViewById(R.id.updateName);
-                    final EditText venueTxt = (EditText)findViewById(R.id.updateVenue);
-                    final EditText dateTxt = (EditText)findViewById(R.id.updateDate);
-                    final EditText commentsTxt = (EditText)findViewById(R.id.updateComments);
+                    nameTxt = (EditText)findViewById(R.id.updateName);
+                    venueTxt = (EditText)findViewById(R.id.updateVenue);
+                    dateTxt = (EditText)findViewById(R.id.updateDate);
+                    commentsTxt = (EditText)findViewById(R.id.updateComments);
 
                     
                     titleTxt.setText("Update " + name);
@@ -69,13 +69,7 @@ public class UpdateArtist extends Activity {
                             }
                             else
                             {
-                                db.updateConcert(nameTxt.getText().toString(),
-                                        venueTxt.getText().toString(),
-                                        dateTxt.getText().toString(),
-                                        commentsTxt.getText().toString());
-                                db.close();
-                                Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
-                                //super.finish();
+                                UpdateArtistButton();
                             }
                         }
                     });
@@ -102,4 +96,15 @@ public class UpdateArtist extends Activity {
             e.printStackTrace();
         }
 	}
+
+    public void UpdateArtistButton()
+    {
+        db.updateConcert(nameTxt.getText().toString(),
+                venueTxt.getText().toString(),
+                dateTxt.getText().toString(),
+                commentsTxt.getText().toString());
+        db.close();
+        Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
+        super.finish();
+    }
 }

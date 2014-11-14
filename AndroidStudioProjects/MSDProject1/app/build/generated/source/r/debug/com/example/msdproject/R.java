@@ -1306,8 +1306,9 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int edit=0x7f020033;
-        public static final int ic_launcher=0x7f020034;
-        public static final int logo2=0x7f020035;
+        public static final int edit_white=0x7f020034;
+        public static final int ic_launcher=0x7f020035;
+        public static final int logo2=0x7f020036;
     }
     public static final class id {
         public static final int action_bar=0x7f070033;
@@ -1323,7 +1324,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f070030;
         public static final int action_mode_bar_stub=0x7f07002f;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f07005c;
+        public static final int action_settings=0x7f07005b;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int addButton=0x7f070047;
         public static final int addConcertButton=0x7f07004c;
@@ -1342,7 +1343,6 @@ containing a value of this type.
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070009;
         public static final int dropdown=0x7f070013;
-        public static final int edit=0x7f07005b;
         public static final int editComments=0x7f070046;
         public static final int editDate=0x7f070045;
         public static final int editName=0x7f070043;
@@ -1356,7 +1356,6 @@ containing a value of this type.
         public static final int icon=0x7f070028;
         public static final int ifRoom=0x7f07000e;
         public static final int image=0x7f070025;
-        public static final int label=0x7f07005a;
         public static final int likeTitle=0x7f07004b;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070027;
@@ -1386,6 +1385,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001e;
         public static final int submit_area=0x7f07003e;
         public static final int tabMode=0x7f070002;
+        public static final int text1=0x7f07005a;
         public static final int title=0x7f070029;
         public static final int top=0x7f070015;
         public static final int up=0x7f07001f;
