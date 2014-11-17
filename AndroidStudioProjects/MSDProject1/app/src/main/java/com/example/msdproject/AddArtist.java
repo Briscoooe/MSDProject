@@ -48,7 +48,7 @@ public class AddArtist extends Activity {
         EditText commentsTxt = (EditText)findViewById(R.id.editComments);
 
         if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
-                dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty() )
+            dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty())
         {
             Toast.makeText(AddArtist.this, "Error! Please fill in all fields", Toast.LENGTH_LONG).show();
         }

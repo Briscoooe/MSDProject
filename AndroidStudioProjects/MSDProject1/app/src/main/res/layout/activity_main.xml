@@ -9,15 +9,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:paddingLeft="20sp"
+        android:padding="15sp"
+        android:background="@color/headingOrange"
         android:text="@string/like"
         android:textSize="25sp"
         android:textStyle="bold"
         android:paddingTop="20sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="50dp"/>
+        android:layout_alignParentEnd="true" />
 
     <ListView
         android:cacheColorHint="#00000000"
@@ -31,12 +31,15 @@
         android:theme="@style/ListFont"
         />
 
-    <Button
+    <ImageButton
         android:id="@+id/addConcertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/add"
+        android:padding="20dp"
+        android:background="@null"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/add" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

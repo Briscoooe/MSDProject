@@ -7,9 +7,6 @@
 * "are you sure?" dialog box
 *
 * Monday:
-* FIX DELETE PROBLEM
-* Update not working
-* Ask rory about simplecursoradapter
 * multiple click items on list
 *
 * General:
@@ -50,9 +47,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
-    ArrayList<String> data_list=new ArrayList<String>();
     DBManager db =  new DBManager(this);
-    ArrayAdapter<String> concertList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,7 +55,7 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button add = (Button)findViewById(R.id.addConcertButton);
+        ImageButton add = (ImageButton)findViewById(R.id.addConcertButton);
         add.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -99,32 +94,14 @@ public class MainActivity extends ListActivity {
     {
         super.onResume();
         addData();
-        /*
-        concertList.clear();
-        data_list.clear();
-        try {
-            db.open();
-            Cursor c = db.getAllConcerts();
-            if (c.moveToFirst())
-            {
-                do {
-                    data_list.add(c.getString(1));
-                } while (c.moveToNext());
-            }
-            concertList.notifyDataSetChanged();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
-
-
-        //addData();
 
     }
 
     public void addData()
     {
 
-        try {
+        try
+        {
             db.open();
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
@@ -134,26 +111,12 @@ public class MainActivity extends ListActivity {
 
             ListView listView = (ListView) findViewById(android.R.id.list);
             listView.setAdapter(adapter);
-        } catch (SQLException e){
+        }
+
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
-
-        /*
-        data_list.clear();
-        ListView listView = (ListView) findViewById(android.R.id.list);
-        Cursor c = db.getAllConcerts();
-        if (c.moveToFirst())
-        {
-            do {
-                data_list.add(c.getString(1));
-            } while (c.moveToNext());
-        }
-        concertList = new ArrayAdapter<String>(getApplicationContext(),
-                R.layout.row_layout, R.id.text1, data_list);
-
-        //TextView listText = (TextView)findViewById(R.id.text1);
-        //listText.setMovementMethod(new ScrollingMovementMethod());
-        listView.setAdapter(concertList);*/
 
         db.close();
     }
@@ -174,20 +137,6 @@ public class MainActivity extends ListActivity {
             Intent i =  new Intent(MainActivity.this, ViewArtist.class);
             i.putExtra("id", long_id);
             startActivity(i);
-
-            //possibly startactivityforresult
-            //return deleted row, delete it and update list
-
-            /*
-            AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-            Cursor c = dba.getsavedcontacts();
-            c.moveToPosition(info.position);
-            String id = c.getString(c.getColumnIndex(Constants.KEY_ID));
-            dba.open();
-            dba.deleteRow(Long.parseLong(id));//remove entry from database according to rowID
-            DATA.remove(info.position); //remove entry from arrayadapter, will remove entry from listview
-            adapter.notifyDataSetChanged();
-            c.close();*/
         }
 
         catch (SQLException e)

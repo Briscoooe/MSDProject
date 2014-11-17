@@ -22,14 +22,8 @@ public class DBManager {
     private static final String DB_TABLE = "Concert_Info";
     private static final int DB_VERSION = 1;
 
-    /*
     private static final String DB_CREATE =
-            "create table " + DB_TABLE +  " (" + COL_ROWID + " integer primary key autoincrement, " + COL_NAME  + " text not null, " +
-                    COL_VENUE + " text not null, " + COL_DATE + " text not null, " +
-                    COL_COMMENTS + " text not null);";*/
-
-    private static final String DB_CREATE =
-            "create table " + DB_TABLE + 
+            "create table " + DB_TABLE +
     " (_id integer primary key autoincrement, " +
             "name text not null, " +
             "venue text not null, " +
@@ -47,10 +41,8 @@ public class DBManager {
         DBHelper = new DatabaseHelper(context);
     }
 
-    //embedded class
     public static class DatabaseHelper extends SQLiteOpenHelper
     {
-        //context refers to activity that called it
         DatabaseHelper(Context context)
         {
             super(context, DB_NAME, null, DB_VERSION);
@@ -86,11 +78,6 @@ public class DBManager {
         DBHelper.close();
     }
 
-    public long getId(String name)
-    {
-        long x = 10;
-        return x;
-    }
     public long insertConcert(String name, String venue, String date, String comments)
     {
         ContentValues initialValues = new ContentValues();
@@ -103,7 +90,8 @@ public class DBManager {
 
     public boolean deleteConcert(String name)
     {
-        return db.delete(DB_TABLE, COL_NAME + "=" + name, null) > 0;
+        return db.delete(DB_TABLE, "name='"+ name+"'", null) > 0;
+
     }
 
     public Cursor getAllConcerts() {
@@ -147,19 +135,6 @@ public class DBManager {
         }
 
         return mCursor;
-
-         /*
-         could also be done as
-                        null,
-                        null,
-                        COL_VENUE + "=" + DATE,
-                        null,
-                        null
-
-                        or remove unnecessary items in string[]
-                        LEAVE nulls the way they are
-
-                         */
     }
 
     public boolean updateConcert(String name, String venue, String date, String comments)
@@ -167,13 +142,13 @@ public class DBManager {
         ContentValues updateValues = new ContentValues();
         updateValues.put(COL_NAME, name);
         updateValues.put(COL_VENUE, venue);
-        updateValues.put(COL_COMMENTS, comments);
         updateValues.put(COL_DATE, date);
+        updateValues.put(COL_COMMENTS, comments);
         Log.i("test", "DB Manager method: Value of name = " + name);
         Log.i("test", "DB Manager method: Value of venue = " + venue);
         Log.i("test", "DB Manager method: Value of date = " + date);
         Log.i("test", "DB Manager method: Value of comments = " + comments);
-        return db.update(DB_TABLE, updateValues, COL_NAME  + "=" + name, null) > 0;
+        return db.update(DB_TABLE, updateValues, "name='"+ name+"'", null) > 0;
     }
 
     public void reset () throws SQLException {

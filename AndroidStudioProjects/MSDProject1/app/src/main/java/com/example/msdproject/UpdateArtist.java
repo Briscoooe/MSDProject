@@ -25,9 +25,9 @@ public class UpdateArtist extends Activity {
     public EditText commentsTxt;
 
     @Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_update_artist);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_update_artist);
 
         Intent intent = getIntent();
         final long num = intent.getLongExtra("id", 1);
@@ -50,7 +50,7 @@ public class UpdateArtist extends Activity {
                     dateTxt = (EditText)findViewById(R.id.updateDate);
                     commentsTxt = (EditText)findViewById(R.id.updateComments);
 
-                    
+
                     titleTxt.setText(name);
                     nameTxt.setText(name);
                     venueTxt.setText(venue);
@@ -71,28 +71,15 @@ public class UpdateArtist extends Activity {
                             else
                             {
 
-                                String val1 = nameTxt.getText().toString();
-                                String val2 = venueTxt.getText().toString();
-                                String val3 = dateTxt.getText().toString();
-                                String val4 = commentsTxt.getText().toString();
+                                String updatedName = nameTxt.getText().toString();
+                                String updatedVenue = venueTxt.getText().toString();
+                                String updatedDate = dateTxt.getText().toString();
+                                String updatedComments = commentsTxt.getText().toString();
 
-                                UpdateArtistButton(val1,val2,val3,val4);
+                                UpdateArtistButton(updatedName,updatedVenue,updatedDate,updatedComments);
                             }
                         }
                     });
-
-                    /*
-                    EditText nameTxt = (EditText)findViewById(R.id.editName);
-                    EditText venueTxt = (EditText)findViewById(R.id.editVenue);
-                    EditText dateTxt = (EditText)findViewById(R.id.editDate);
-                    EditText commentsTxt = (EditText)findViewById(R.id.editComments);
-
-                    db.open();
-                    long id = db.insertConcert(nameTxt.getText().toString(),
-                            venueTxt.getText().toString(),
-                            dateTxt.getText().toString(),
-                            commentsTxt.getText().toString());
-                    db.close();*/
 
                 } while (c.moveToNext());
             }
@@ -102,18 +89,18 @@ public class UpdateArtist extends Activity {
         {
             e.printStackTrace();
         }
-	}
+    }
 
-    public void UpdateArtistButton(String passed_name, String passed_venue, String passed_date, String passed_comments)
+    public void UpdateArtistButton(String passedName, String passedVenue, String passedDate, String passedComments)
     {
         try
         {
             db.open();
-            Log.i("test", "Update artist method: \nValue of name = " + passed_name);
-            Log.i("test", "Update artist method: Value of venue = " + passed_venue);
-            Log.i("test", "Update artist method: Value of date = " + passed_date);
-            Log.i("test", "Update artist method: Value of comments = " + passed_comments);
-            db.updateConcert(passed_name,passed_venue, passed_date, passed_comments);
+            Log.i("test", "Update artist method: Value of name = " + passedName);
+            Log.i("test", "Update artist method: Value of venue = " + passedVenue);
+            Log.i("test", "Update artist method: Value of date = " + passedDate);
+            Log.i("test", "Update artist method: Value of comments = " + passedComments);
+            db.updateConcert(passedName,passedVenue, passedDate, passedComments);
             Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
             super.finish();
         }
