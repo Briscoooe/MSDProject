@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,7 +34,7 @@ public class UpdateArtist extends Activity {
 
         try {
             db.open();
-            Cursor c = db.getConcert(num + 1);
+            Cursor c = db.getConcert(num);
             if (c.moveToFirst())
             {
                 do
@@ -50,7 +51,7 @@ public class UpdateArtist extends Activity {
                     commentsTxt = (EditText)findViewById(R.id.updateComments);
 
                     
-                    titleTxt.setText("Update " + name);
+                    titleTxt.setText(name);
                     nameTxt.setText(name);
                     venueTxt.setText(venue);
                     dateTxt.setText(date);
@@ -69,7 +70,13 @@ public class UpdateArtist extends Activity {
                             }
                             else
                             {
-                                UpdateArtistButton();
+
+                                String val1 = nameTxt.getText().toString();
+                                String val2 = venueTxt.getText().toString();
+                                String val3 = dateTxt.getText().toString();
+                                String val4 = commentsTxt.getText().toString();
+
+                                UpdateArtistButton(val1,val2,val3,val4);
                             }
                         }
                     });
@@ -97,14 +104,25 @@ public class UpdateArtist extends Activity {
         }
 	}
 
-    public void UpdateArtistButton()
+    public void UpdateArtistButton(String passed_name, String passed_venue, String passed_date, String passed_comments)
     {
-        db.updateConcert(nameTxt.getText().toString(),
-                venueTxt.getText().toString(),
-                dateTxt.getText().toString(),
-                commentsTxt.getText().toString());
+        try
+        {
+            db.open();
+            Log.i("test", "Update artist method: \nValue of name = " + passed_name);
+            Log.i("test", "Update artist method: Value of venue = " + passed_venue);
+            Log.i("test", "Update artist method: Value of date = " + passed_date);
+            Log.i("test", "Update artist method: Value of comments = " + passed_comments);
+            db.updateConcert(passed_name,passed_venue, passed_date, passed_comments);
+            Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
+            super.finish();
+        }
+
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
         db.close();
-        Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
-        super.finish();
     }
 }

@@ -7,7 +7,10 @@
 * "are you sure?" dialog box
 *
 * Monday:
-* Ask about why super.finish doesn't always work
+* FIX DELETE PROBLEM
+* Update not working
+* Ask rory about simplecursoradapter
+* multiple click items on list
 *
 * General:
 * look at rawQuery()
@@ -31,6 +34,9 @@ import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.content.Intent;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Button;
 import android.widget.ArrayAdapter;
@@ -39,14 +45,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 
 public class MainActivity extends ListActivity {
 
-    public ArrayList<String> data_list=new ArrayList<String>();
+    ArrayList<String> data_list=new ArrayList<String>();
     DBManager db =  new DBManager(this);
-    public ArrayAdapter<String> concertList;
-
+    ArrayAdapter<String> concertList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -58,11 +64,24 @@ public class MainActivity extends ListActivity {
         add.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent i = new Intent(MainActivity.this, AddArtist.class);
                 startActivity(i);
             }
         });
+
+        /*
+        ImageButton edit = (ImageButton)findViewById(R.id.deleteIcon);
+        edit.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Intent i = new Intent(MainActivity.this, UpdateArtist.class);
+                startActivity(i);
+            }
+        });*/
+
 
         /*
         try {
@@ -79,19 +98,26 @@ public class MainActivity extends ListActivity {
     public void onResume()
     {
         super.onResume();
-        //concertList.notifyDataSetChanged();
         addData();
         /*
         concertList.clear();
         data_list.clear();
-        Cursor c = db.getAllConcerts();
-        if (c.moveToFirst())
-        {
-            do {
-                data_list.add(c.getString(0));
-            } while (c.moveToNext());
+        try {
+            db.open();
+            Cursor c = db.getAllConcerts();
+            if (c.moveToFirst())
+            {
+                do {
+                    data_list.add(c.getString(1));
+                } while (c.moveToNext());
+            }
+            concertList.notifyDataSetChanged();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }*/
-        //concertList.notifyDataSetChanged();
+
+
+        //addData();
 
     }
 
@@ -100,10 +126,19 @@ public class MainActivity extends ListActivity {
 
         try {
             db.open();
+            SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+                    android.R.layout.simple_list_item_1,
+                    db.getAllConcerts(),
+                    new String[] { "name" },
+                    new int[] { android.R.id.text1 });
+
+            ListView listView = (ListView) findViewById(android.R.id.list);
+            listView.setAdapter(adapter);
         } catch (SQLException e){
             e.printStackTrace();
         }
 
+        /*
         data_list.clear();
         ListView listView = (ListView) findViewById(android.R.id.list);
         Cursor c = db.getAllConcerts();
@@ -115,22 +150,16 @@ public class MainActivity extends ListActivity {
         }
         concertList = new ArrayAdapter<String>(getApplicationContext(),
                 R.layout.row_layout, R.id.text1, data_list);
-        listView.setAdapter(concertList);
+
+        //TextView listText = (TextView)findViewById(R.id.text1);
+        //listText.setMovementMethod(new ScrollingMovementMethod());
+        listView.setAdapter(concertList);*/
 
         db.close();
-
-/*
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_1,
-                db.getAllConcerts(),
-                new String[] { "name" },
-                new int[] { android.R.id.text1 });
-
-        ListView listView = (ListView) findViewById(android.R.id.list);
-        listView.setAdapter(adapter);*/
     }
 
-    protected void onListItemClick(ListView l, View v, int position, long id) {
+    protected void onListItemClick(ListView l, View v, int position, long id)
+    {
         super.onListItemClick(l, v, position, id);
 
         try

@@ -1305,10 +1305,11 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int edit=0x7f020033;
-        public static final int edit_white=0x7f020034;
-        public static final int ic_launcher=0x7f020035;
-        public static final int logo2=0x7f020036;
+        public static final int delete_white=0x7f020033;
+        public static final int edit=0x7f020034;
+        public static final int edit_white=0x7f020035;
+        public static final int ic_launcher=0x7f020036;
+        public static final int logo2=0x7f020037;
     }
     public static final class id {
         public static final int action_bar=0x7f070033;
@@ -1324,7 +1325,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f070030;
         public static final int action_mode_bar_stub=0x7f07002f;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f07005b;
+        public static final int action_settings=0x7f07005c;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int addButton=0x7f070047;
         public static final int addConcertButton=0x7f07004c;
@@ -1338,13 +1339,15 @@ containing a value of this type.
         public static final int decor_content_parent=0x7f070031;
         public static final int default_activity_button=0x7f070026;
         public static final int deleteButton=0x7f07004a;
-        public static final int deleteConcertButton=0x7f070059;
+        public static final int deleteConcertButton=0x7f070058;
+        public static final int deleteIcon=0x7f07005a;
         public static final int deleteTitle=0x7f070048;
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070009;
         public static final int dropdown=0x7f070013;
         public static final int editComments=0x7f070046;
         public static final int editDate=0x7f070045;
+        public static final int editIcon=0x7f07005b;
         public static final int editName=0x7f070043;
         public static final int editVenue=0x7f070044;
         public static final int edit_query=0x7f070035;
@@ -1367,7 +1370,6 @@ containing a value of this type.
         public static final int progress_circular=0x7f07001c;
         public static final int progress_horizontal=0x7f07001d;
         public static final int radio=0x7f07002d;
-        public static final int refreshButton=0x7f07004d;
         public static final int search_badge=0x7f070037;
         public static final int search_bar=0x7f070036;
         public static final int search_button=0x7f070038;
@@ -1385,22 +1387,22 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001e;
         public static final int submit_area=0x7f07003e;
         public static final int tabMode=0x7f070002;
-        public static final int text1=0x7f07005a;
+        public static final int text1=0x7f070059;
         public static final int title=0x7f070029;
         public static final int top=0x7f070015;
         public static final int up=0x7f07001f;
-        public static final int updateComments=0x7f070052;
-        public static final int updateConcertButton=0x7f070053;
-        public static final int updateDate=0x7f070051;
-        public static final int updateName=0x7f07004f;
-        public static final int updateTitle=0x7f07004e;
-        public static final int updateVenue=0x7f070050;
+        public static final int updateComments=0x7f070051;
+        public static final int updateConcertButton=0x7f070052;
+        public static final int updateDate=0x7f070050;
+        public static final int updateName=0x7f07004e;
+        public static final int updateTitle=0x7f07004d;
+        public static final int updateVenue=0x7f07004f;
         public static final int useLogo=0x7f070004;
-        public static final int viewComments=0x7f070058;
-        public static final int viewDate=0x7f070057;
-        public static final int viewName=0x7f070055;
-        public static final int viewTitle=0x7f070054;
-        public static final int viewVenue=0x7f070056;
+        public static final int viewComments=0x7f070057;
+        public static final int viewDate=0x7f070056;
+        public static final int viewName=0x7f070054;
+        public static final int viewTitle=0x7f070053;
+        public static final int viewVenue=0x7f070055;
         public static final int withText=0x7f070010;
         public static final int wrap_content=0x7f070014;
     }

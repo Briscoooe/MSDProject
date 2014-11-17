@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
+import android.util.Log;
+
 import java.sql.SQLException;
 
 
@@ -160,25 +162,17 @@ public class DBManager {
                          */
     }
 
-    /*
-    public boolean updateConcert(long ROW_ID, String name, String venue, String date, String comments)
-    {
-        ContentValues args = new ContentValues();
-        args.put(COL_NAME, name);
-        args.put(COL_VENUE, venue);
-        args.put(COL_DATE, date);
-        args.put(COL_COMMENTS, comments);
-        return db.update(DB_TABLE, args, COL_ROWID  + "=" + ROW_ID, null) > 0;
-
-    }*/
-
     public boolean updateConcert(String name, String venue, String date, String comments)
     {
         ContentValues updateValues = new ContentValues();
         updateValues.put(COL_NAME, name);
         updateValues.put(COL_VENUE, venue);
-        updateValues.put(COL_DATE, date);
         updateValues.put(COL_COMMENTS, comments);
+        updateValues.put(COL_DATE, date);
+        Log.i("test", "DB Manager method: Value of name = " + name);
+        Log.i("test", "DB Manager method: Value of venue = " + venue);
+        Log.i("test", "DB Manager method: Value of date = " + date);
+        Log.i("test", "DB Manager method: Value of comments = " + comments);
         return db.update(DB_TABLE, updateValues, COL_NAME  + "=" + name, null) > 0;
     }
 

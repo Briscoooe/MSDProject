@@ -37,6 +37,7 @@
         <activity
             android:name="com.example.msdproject.UpdateArtist"
             android:label="@string/title_activity_update_concert" >
+            android:noHistory="true"
         </activity>
         <activity
             android:name="com.example.msdproject.DeleteArtist"
