@@ -144,10 +144,6 @@ public class DBManager {
         updateValues.put(COL_VENUE, venue);
         updateValues.put(COL_DATE, date);
         updateValues.put(COL_COMMENTS, comments);
-        Log.i("test", "DB Manager method: Value of name = " + name);
-        Log.i("test", "DB Manager method: Value of venue = " + venue);
-        Log.i("test", "DB Manager method: Value of date = " + date);
-        Log.i("test", "DB Manager method: Value of comments = " + comments);
         return db.update(DB_TABLE, updateValues, "name='"+ name+"'", null) > 0;
     }
 

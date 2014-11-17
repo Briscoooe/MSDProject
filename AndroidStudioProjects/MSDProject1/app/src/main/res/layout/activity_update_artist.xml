@@ -5,106 +5,72 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
+        style="@style/titleBar"
         android:id="@+id/updateTitle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/headingOrange"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="left"
-        android:padding="15dp"
-        android:text="@string/update"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:paddingTop="20sp"				/>
+        android:text="@string/update"/>
 
     <TableLayout
+        style="@style/my_table"
         android:id="@+id/addTable"
-        style="@style/my_table">
-        <TableRow
-            style="@style/Table_Layout">
+        android:layout_below="@id/updateTitle">
+        <TableRow>
             <TextView
-                android:text="@string/artistName"
-                android:padding="3dip"
-                android:textStyle="bold"
-                android:textSize="25dp"/>
+                style="@style/largeText"
+                android:text="@string/artistName"/>
         </TableRow>
         <TableRow>
             <EditText
-                android:inputType="textNoSuggestions"
-                android:layout_width="wrap_content"
-                android:id="@+id/updateName"
-                android:gravity="left"
-                android:padding="3dip"
-                android:layout_marginLeft="10dp"
-                android:textSize="20dp"/>
+                style="@style/tableEditText"
+                android:id="@+id/updateName"/>
         </TableRow>
 
         <TableRow>
             <TextView
                 android:text="@string/venue"
-                android:padding="3dip"
-                android:textStyle="bold"
-                android:textSize="25dp" />
+                style="@style/largeText"/>
         </TableRow>
         <TableRow>
             <EditText
-                android:inputType="text"
-                android:id="@+id/updateVenue"
-                android:gravity="left"
-                android:padding="3dip"
-                android:layout_marginLeft="10dp"
-                android:textSize="20dp" />
+                style="@style/tableEditText"
+                android:id="@+id/updateVenue"/>
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="@string/date"
-                android:padding="3dip"
-                android:textStyle="bold"
-                android:textSize="25dp" />
+                style="@style/largeText"
+                android:text="@string/date"/>
         </TableRow>
         <TableRow>
             <EditText
-                android:inputType="text"
-                android:id="@+id/updateDate"
-                android:gravity="left"
-                android:padding="3dip"
-                android:layout_marginLeft="10dp"
-                android:textSize="20dp" />
+                style="@style/tableEditText"
+                android:id="@+id/updateDate"/>
         </TableRow>
 
         <TableRow>
             <TextView
-                android:text="@string/comments"
-                android:padding="3dip"
-                android:textStyle="bold"
-                android:textSize="25dp" />
+                style="@style/largeText"
+                android:text="@string/comments"/>
         </TableRow>
         <TableRow>
             <EditText
-                android:inputType="text"
-                android:id="@+id/updateComments"
-                android:gravity="left"
-                android:padding="3dip"
-                android:layout_marginLeft="10dp"
-                android:textSize="20dp" />
+                style="@style/tableEditText"
+                android:id="@+id/updateComments"/>
         </TableRow>
 
 
 
     </TableLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/updateConcertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/done"
+        android:padding="20dp"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/addTable"
-        android:gravity="right"
-        android:layout_margin="20sp"
-        android:text="@string/updateButton"
-        android:onClick="UpdateArtist"
-        android:textAlignment="center" />
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

@@ -24,7 +24,7 @@
     <color name="background_material_light">#ffeeeeee</color>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->
     <eat-comment/>
-    <color name="black">#000000</color>
+    <color name="black">#666</color>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
@@ -77,6 +77,9 @@
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="white">#ffffff</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
     <declare-styleable name="ActionBarLayout"><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
@@ -100,6 +103,8 @@
     <declare-styleable name="Toolbar"><attr format="reference" name="titleTextAppearance"/><attr format="reference" name="subtitleTextAppearance"/><attr name="title"/><attr name="subtitle"/><attr name="android:gravity"/><attr format="dimension" name="titleMargins"/><attr format="dimension" name="titleMarginStart"/><attr format="dimension" name="titleMarginEnd"/><attr format="dimension" name="titleMarginTop"/><attr format="dimension" name="titleMarginBottom"/><attr name="contentInsetStart"/><attr name="contentInsetEnd"/><attr name="contentInsetLeft"/><attr name="contentInsetRight"/><attr format="dimension" name="maxButtonHeight"/><attr format="reference" name="theme"/><attr name="buttonGravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/></attr><attr format="reference" name="collapseIcon"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <eat-comment/>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_material">4dp</dimen>
     <dimen name="abc_action_bar_icon_vertical_padding_material">16dp</dimen>
@@ -181,14 +186,13 @@
     <string name="addButton">Add</string>
     <string name="addToast">Concert Added!</string>
     <string name="app_name">My Concerts</string>
-    <string name="artistName">Artist: </string>
-    <string name="comments">Comments: </string>
-    <string name="date">Date: </string>
+    <string name="artistName">Artist </string>
+    <string name="comments">Comments </string>
+    <string name="date">Date </string>
     <string name="delete">Delete Concert</string>
     <string name="deleteButton">Delete</string>
     <string name="deleteToast">Concert Deleted!</string>
     <string name="enterArtist">Enter Artist Name</string>
-    <string name="hello_world">Hello world!</string>
     <string name="like">My Concerts</string>
     <string name="title_activity_add_concert">AddConcert</string>
     <string name="title_activity_database">Database</string>
@@ -199,7 +203,7 @@
     <string name="update">Update Concert</string>
     <string name="updateButton">Update</string>
     <string name="updateToast">Concert Updated!</string>
-    <string name="venue">Venue: </string>
+    <string name="venue">Venue </string>
     <string name="viewConcert">View Concert</string>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
@@ -1274,11 +1278,35 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
+    <style name="largeText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">left</item>
+    </style>
     <style name="my_table">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:stretchColumns">1</item>
         <item name="android:paddingLeft">20sp</item>
-        <item name="android:layout_below">@+id/updateTitle</item>
+    </style>
+    <style name="tableEditText">
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">3dip</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginRight">20sp</item>
+    </style>
+    <style name="titleBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">20sp</item>
+        <item name="android:background">@color/headingOrange</item>
     </style>
 </resources>

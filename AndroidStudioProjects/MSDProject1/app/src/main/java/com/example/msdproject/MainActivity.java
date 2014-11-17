@@ -31,19 +31,12 @@ import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.content.Intent;
-import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Button;
-import android.widget.ArrayAdapter;
 import android.view.View;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
-
 
 public class MainActivity extends ListActivity {
 
@@ -143,8 +136,6 @@ public class MainActivity extends ListActivity {
         {
             e.printStackTrace();
         }
-
         db.close();
     }
-
 }

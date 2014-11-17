@@ -5,79 +5,69 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
+        style="@style/titleBar"
         android:id="@+id/addTitle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="@color/headingOrange"
-        android:layout_centerHorizontal="true"
-        android:gravity="left"
-        android:padding="15dp"
-        android:text="@string/add"
-        android:textSize="25sp"
-        android:textStyle="bold" 
-        android:paddingTop="20sp"				/>
+        android:text="@string/add"			/>
     
    <TableLayout
        	android:id="@+id/addTable"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:stretchColumns="1"
-	    android:paddingLeft="20sp"
+        style="@style/my_table"
 	    android:layout_below="@+id/addTitle">
 	    <TableRow>
 	        <TextView
-	            android:text="@string/artistName"
-	            android:padding="3dip" />
+                style="@style/largeText"
+	            android:text="@string/artistName"/>
+        </TableRow>
+        <TableRow>
 	        <EditText
-	            android:inputType="textNoSuggestions"
-                android:id="@+id/editName"
-	            android:gravity="left"
-	            android:padding="3dip" />
+                style="@style/tableEditText"
+                android:id="@+id/editName"/>
 	    </TableRow>
-	    <TableRow>
-	        <TextView
-	            android:text="@string/venue"
-	            android:padding="3dip" />
-	        <EditText
-	            android:inputType="textNoSuggestions"
-                android:id="@+id/editVenue"
-	            android:gravity="left"
-	            android:padding="3dip" />
-	    </TableRow>
-	    <TableRow>
-	        <TextView
-	            android:text="@string/date"
-	            android:padding="3dip" />
-	        <EditText
-	            android:inputType="textNoSuggestions"
-                android:id="@+id/editDate"
-	            android:gravity="left"
-	            android:padding="3dip" />
-	    </TableRow>
-	    <TableRow>
-	        <TextView
-	            android:text="@string/comments"
-	            android:padding="3dip" />
-	        <EditText
-	            android:inputType="textNoSuggestions"
-                android:id="@+id/editComments"
-	            android:gravity="left"
-	            android:padding="3dip" />
-	    </TableRow>
-	    
-	   
 
+	    <TableRow>
+	        <TextView
+                style="@style/largeText"
+	            android:text="@string/venue"/>
+        </TableRow>
+        <TableRow>
+	        <EditText
+                style="@style/tableEditText"
+                android:id="@+id/editVenue"/>
+	    </TableRow>
+
+	    <TableRow>
+	        <TextView
+                style="@style/largeText"
+	            android:text="@string/date"/>
+       </TableRow>
+       <TableRow>
+	        <EditText
+                style="@style/tableEditText"
+                android:id="@+id/editDate" />
+	   </TableRow>
+
+	   <TableRow>
+	        <TextView
+                style="@style/largeText"
+	            android:text="@string/comments"/>
+       </TableRow>
+       <TableRow>
+	        <EditText
+                style="@style/tableEditText"
+                android:id="@+id/editComments"/>
+	    </TableRow>
     </TableLayout>
-    
-   <Button
-       android:id="@+id/addButton"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignParentRight="true"
-       android:layout_below="@+id/addTable"
-       android:gravity="right"
-       android:text="@string/addButton" />
+
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add"
+        android:padding="20dp"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
 <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_add_artist.xml -->

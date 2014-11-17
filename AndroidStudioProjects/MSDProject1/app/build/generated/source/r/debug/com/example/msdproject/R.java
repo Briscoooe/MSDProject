@@ -1144,19 +1144,19 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050005;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f060035;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f060036;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f060036;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f060037;
         public static final int abc_input_method_navigation_guard=0x7f060000;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f060037;
-        public static final int abc_primary_text_disable_only_material_light=0x7f060038;
-        public static final int abc_primary_text_material_dark=0x7f060039;
-        public static final int abc_primary_text_material_light=0x7f06003a;
-        public static final int abc_search_url_text=0x7f06003b;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f060038;
+        public static final int abc_primary_text_disable_only_material_light=0x7f060039;
+        public static final int abc_primary_text_material_dark=0x7f06003a;
+        public static final int abc_primary_text_material_light=0x7f06003b;
+        public static final int abc_search_url_text=0x7f06003c;
         public static final int abc_search_url_text_normal=0x7f060001;
         public static final int abc_search_url_text_pressed=0x7f060002;
         public static final int abc_search_url_text_selected=0x7f060003;
-        public static final int abc_secondary_text_material_dark=0x7f06003c;
-        public static final int abc_secondary_text_material_light=0x7f06003d;
+        public static final int abc_secondary_text_material_dark=0x7f06003d;
+        public static final int abc_secondary_text_material_light=0x7f06003e;
         public static final int accent_material_dark=0x7f060004;
         public static final int accent_material_light=0x7f060005;
         public static final int background_floating_material_dark=0x7f060006;
@@ -1206,6 +1206,7 @@ containing a value of this type.
         public static final int secondary_text_disabled_material_light=0x7f060032;
         public static final int switch_thumb_normal_material_dark=0x7f060033;
         public static final int switch_thumb_normal_material_light=0x7f060034;
+        public static final int white=0x7f060035;
     }
     public static final class dimen {
         public static final int abc_action_bar_default_height_material=0x7f080000;
@@ -1307,9 +1308,13 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int add=0x7f020033;
-        public static final int edit=0x7f020034;
-        public static final int ic_launcher=0x7f020035;
-        public static final int new_logo=0x7f020036;
+        public static final int delete=0x7f020034;
+        public static final int delete_black=0x7f020035;
+        public static final int done=0x7f020036;
+        public static final int edit=0x7f020037;
+        public static final int edit_black=0x7f020038;
+        public static final int ic_launcher=0x7f020039;
+        public static final int new_logo=0x7f02003a;
     }
     public static final class id {
         public static final int action_bar=0x7f070033;
@@ -1474,19 +1479,18 @@ containing a value of this type.
         public static final int deleteButton=0x7f0a0018;
         public static final int deleteToast=0x7f0a0019;
         public static final int enterArtist=0x7f0a001a;
-        public static final int hello_world=0x7f0a001b;
-        public static final int like=0x7f0a001c;
-        public static final int title_activity_add_concert=0x7f0a001d;
-        public static final int title_activity_database=0x7f0a001e;
-        public static final int title_activity_dbmanager=0x7f0a001f;
-        public static final int title_activity_delete_concert=0x7f0a0020;
-        public static final int title_activity_update_concert=0x7f0a0021;
-        public static final int title_activity_view_artist=0x7f0a0022;
-        public static final int update=0x7f0a0023;
-        public static final int updateButton=0x7f0a0024;
-        public static final int updateToast=0x7f0a0025;
-        public static final int venue=0x7f0a0026;
-        public static final int viewConcert=0x7f0a0027;
+        public static final int like=0x7f0a001b;
+        public static final int title_activity_add_concert=0x7f0a001c;
+        public static final int title_activity_database=0x7f0a001d;
+        public static final int title_activity_dbmanager=0x7f0a001e;
+        public static final int title_activity_delete_concert=0x7f0a001f;
+        public static final int title_activity_update_concert=0x7f0a0020;
+        public static final int title_activity_view_artist=0x7f0a0021;
+        public static final int update=0x7f0a0022;
+        public static final int updateButton=0x7f0a0023;
+        public static final int updateToast=0x7f0a0024;
+        public static final int venue=0x7f0a0025;
+        public static final int viewConcert=0x7f0a0026;
     }
     public static final class style {
         /** 
@@ -1557,18 +1561,18 @@ containing a value of this type.
         public static final int Base_ThemeOverlay_AppCompat_Dark=0x7f0b0037;
         public static final int Base_ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0b0038;
         public static final int Base_ThemeOverlay_AppCompat_Light=0x7f0b0039;
-        public static final int Base_V11_Theme_AppCompat=0x7f0b00e4;
-        public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0b00e5;
-        public static final int Base_V11_Theme_AppCompat_Light=0x7f0b00e6;
-        public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0b00e7;
-        public static final int Base_V14_Theme_AppCompat=0x7f0b00e8;
-        public static final int Base_V14_Theme_AppCompat_Dialog=0x7f0b00e9;
-        public static final int Base_V14_Theme_AppCompat_Light=0x7f0b00ea;
-        public static final int Base_V14_Theme_AppCompat_Light_Dialog=0x7f0b00eb;
-        public static final int Base_V21_Theme_AppCompat=0x7f0b00ec;
-        public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0b00ed;
-        public static final int Base_V21_Theme_AppCompat_Light=0x7f0b00ee;
-        public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0b00ef;
+        public static final int Base_V11_Theme_AppCompat=0x7f0b00e7;
+        public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0b00e8;
+        public static final int Base_V11_Theme_AppCompat_Light=0x7f0b00e9;
+        public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0b00ea;
+        public static final int Base_V14_Theme_AppCompat=0x7f0b00eb;
+        public static final int Base_V14_Theme_AppCompat_Dialog=0x7f0b00ec;
+        public static final int Base_V14_Theme_AppCompat_Light=0x7f0b00ed;
+        public static final int Base_V14_Theme_AppCompat_Light_Dialog=0x7f0b00ee;
+        public static final int Base_V21_Theme_AppCompat=0x7f0b00ef;
+        public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0b00f0;
+        public static final int Base_V21_Theme_AppCompat_Light=0x7f0b00f1;
+        public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0b00f2;
         public static final int Base_V7_Theme_AppCompat=0x7f0b003a;
         public static final int Base_V7_Theme_AppCompat_Dialog=0x7f0b003b;
         public static final int Base_V7_Theme_AppCompat_Light=0x7f0b003c;
@@ -1738,7 +1742,10 @@ containing a value of this type.
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b00e0;
         public static final int Widget_AppCompat_Toolbar=0x7f0b00e1;
         public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b00e2;
-        public static final int my_table=0x7f0b00e3;
+        public static final int largeText=0x7f0b00e3;
+        public static final int my_table=0x7f0b00e4;
+        public static final int tableEditText=0x7f0b00e5;
+        public static final int titleBar=0x7f0b00e6;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

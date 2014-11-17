@@ -28,13 +28,39 @@
         <item name="android:textSize">50dp</item>
     </style>
 
+    <style name="largeText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="titleBar">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">20sp</item>
+        <item name="android:background">@color/headingOrange</item>
+    </style>
+
     <style name="my_table">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:stretchColumns">1</item>
         <item name="android:paddingLeft">20sp</item>
-        <item name="android:layout_below">@+id/updateTitle</item>
     </style>
 
+    <style name="tableEditText">
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">3dip</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginRight">20sp</item>
+    </style>
 
 </resources>

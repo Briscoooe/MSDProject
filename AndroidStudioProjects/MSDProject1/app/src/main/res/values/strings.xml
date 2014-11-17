@@ -7,10 +7,10 @@
     <string name="enterArtist">Enter Artist Name</string>
     <string name="addButton">Add</string>
     <string name="addToast">Concert Added!</string>
-    <string name="artistName">Artist: </string>
-    <string name="venue">Venue: </string>
-    <string name="date">Date: </string>
-    <string name="comments">Comments: </string>
+    <string name="artistName">Artist </string>
+    <string name="venue">Venue </string>
+    <string name="date">Date </string>
+    <string name="comments">Comments </string>
     <string name="update">Update Concert</string>
     <string name="updateButton">Update</string>
     <string name="updateToast">Concert Updated!</string>
@@ -22,7 +22,6 @@
     <string name="title_activity_add_concert">AddConcert</string>
     <string name="title_activity_delete_concert">DeleteConcert</string>
     <string name="title_activity_database">Database</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_dbmanager">DBManager</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_view_artist">ViewArtist</string>

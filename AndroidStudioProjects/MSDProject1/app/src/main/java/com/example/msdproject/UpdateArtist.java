@@ -4,12 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,14 +22,16 @@ public class UpdateArtist extends Activity {
     public EditText commentsTxt;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_artist);
 
         Intent intent = getIntent();
         final long num = intent.getLongExtra("id", 1);
 
-        try {
+        try
+        {
             db.open();
             Cursor c = db.getConcert(num);
             if (c.moveToFirst())
@@ -57,7 +56,7 @@ public class UpdateArtist extends Activity {
                     dateTxt.setText(date);
                     commentsTxt.setText(comments);
 
-                    Button update = (Button)findViewById(R.id.updateConcertButton);
+                    ImageButton update = (ImageButton)findViewById(R.id.updateConcertButton);
                     update.setOnClickListener(new View.OnClickListener()
                     {
                         @Override
@@ -96,10 +95,6 @@ public class UpdateArtist extends Activity {
         try
         {
             db.open();
-            Log.i("test", "Update artist method: Value of name = " + passedName);
-            Log.i("test", "Update artist method: Value of venue = " + passedVenue);
-            Log.i("test", "Update artist method: Value of date = " + passedDate);
-            Log.i("test", "Update artist method: Value of comments = " + passedComments);
             db.updateConcert(passedName,passedVenue, passedDate, passedComments);
             Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
             super.finish();

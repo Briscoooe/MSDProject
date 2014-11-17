@@ -5,19 +5,9 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
+        style="@style/titleBar"
         android:id="@+id/likeTitle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:padding="15sp"
-        android:background="@color/headingOrange"
-        android:text="@string/like"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:paddingTop="20sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/like"/>
 
     <ListView
         android:cacheColorHint="#00000000"
@@ -27,7 +17,7 @@
         android:layout_below="@+id/likeTitle"
         android:layout_above="@+id/addConcertButton"
         android:paddingLeft="10sp"
-        android:textColor="@android:color/black"
+        android:textSize="25sp"
         android:theme="@style/ListFont"
         />
 
