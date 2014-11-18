@@ -1316,8 +1316,10 @@ containing a value of this type.
         public static final int edit=0x7f020037;
         public static final int edit_black=0x7f020038;
         public static final int event_1=0x7f020039;
-        public static final int ic_launcher=0x7f02003a;
-        public static final int new_logo=0x7f02003b;
+        public static final int event_view=0x7f02003a;
+        public static final int ic_launcher=0x7f02003b;
+        public static final int new_logo=0x7f02003c;
+        public static final int play=0x7f02003d;
     }
     public static final class id {
         public static final int action_bar=0x7f070033;
@@ -1333,7 +1335,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f070030;
         public static final int action_mode_bar_stub=0x7f07002f;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f070057;
+        public static final int action_settings=0x7f070059;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int addButton=0x7f070048;
         public static final int addConcertButton=0x7f07004a;
@@ -1346,7 +1348,7 @@ containing a value of this type.
         public static final int collapseActionView=0x7f070011;
         public static final int decor_content_parent=0x7f070031;
         public static final int default_activity_button=0x7f070026;
-        public static final int deleteConcertButton=0x7f070055;
+        public static final int deleteConcertButton=0x7f070052;
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070009;
         public static final int dropdown=0x7f070013;
@@ -1366,6 +1368,7 @@ containing a value of this type.
         public static final int likeTitle=0x7f070049;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070027;
+        public static final int listenButton=0x7f070051;
         public static final int middle=0x7f07000b;
         public static final int never=0x7f07000d;
         public static final int none=0x7f070003;
@@ -1391,7 +1394,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001e;
         public static final int submit_area=0x7f07003e;
         public static final int tabMode=0x7f070002;
-        public static final int text1=0x7f070056;
+        public static final int text1=0x7f070058;
         public static final int title=0x7f070029;
         public static final int top=0x7f070015;
         public static final int up=0x7f07001f;
@@ -1401,11 +1404,12 @@ containing a value of this type.
         public static final int updateTitle=0x7f07004b;
         public static final int updateVenue=0x7f07004d;
         public static final int useLogo=0x7f070004;
-        public static final int viewComments=0x7f070054;
-        public static final int viewDate=0x7f070053;
-        public static final int viewName=0x7f070051;
+        public static final int viewComments=0x7f070056;
+        public static final int viewDate=0x7f070055;
+        public static final int viewEvent=0x7f070057;
+        public static final int viewName=0x7f070053;
         public static final int viewTitle=0x7f070050;
-        public static final int viewVenue=0x7f070052;
+        public static final int viewVenue=0x7f070054;
         public static final int withText=0x7f070010;
         public static final int wrap_content=0x7f070014;
     }
@@ -1476,18 +1480,20 @@ containing a value of this type.
         public static final int deleteToast=0x7f0a0019;
         public static final int doneUpdating=0x7f0a001a;
         public static final int like=0x7f0a001b;
-        public static final int setDate=0x7f0a001c;
-        public static final int title_activity_add_concert=0x7f0a001d;
-        public static final int title_activity_database=0x7f0a001e;
-        public static final int title_activity_dbmanager=0x7f0a001f;
-        public static final int title_activity_delete_concert=0x7f0a0020;
-        public static final int title_activity_update_concert=0x7f0a0021;
-        public static final int title_activity_view_artist=0x7f0a0022;
-        public static final int update=0x7f0a0023;
-        public static final int updateButton=0x7f0a0024;
-        public static final int updateToast=0x7f0a0025;
-        public static final int venue=0x7f0a0026;
-        public static final int viewConcert=0x7f0a0027;
+        public static final int listen=0x7f0a001c;
+        public static final int setDate=0x7f0a001d;
+        public static final int title_activity_add_concert=0x7f0a001e;
+        public static final int title_activity_database=0x7f0a001f;
+        public static final int title_activity_dbmanager=0x7f0a0020;
+        public static final int title_activity_delete_concert=0x7f0a0021;
+        public static final int title_activity_update_concert=0x7f0a0022;
+        public static final int title_activity_view_artist=0x7f0a0023;
+        public static final int update=0x7f0a0024;
+        public static final int updateButton=0x7f0a0025;
+        public static final int updateToast=0x7f0a0026;
+        public static final int venue=0x7f0a0027;
+        public static final int viewConcert=0x7f0a0028;
+        public static final int viewConcertCal=0x7f0a0029;
     }
     public static final class style {
         /** 

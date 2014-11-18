@@ -10,18 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.sql.SQLException;
-import java.util.Calendar;
 
 public class UpdateArtist extends Activity {
 
     DBManager db = new DBManager(this);
 
-    //Some of the code involving the dialog and calendar box was taken from a youtube tutorial
     static final int dialogID = 1;
     int y, m, d;
 
@@ -35,11 +31,6 @@ public class UpdateArtist extends Activity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_artist);
-
-        Calendar today = Calendar.getInstance();
-        y = today.get(Calendar.YEAR);
-        m = today.get(Calendar.MONTH);
-        d = today.get(Calendar.DAY_OF_MONTH);
 
         Button setDate = (Button)findViewById(R.id.setDateButton);
 
@@ -72,11 +63,21 @@ public class UpdateArtist extends Activity {
                     dateTxt = (TextView)findViewById(R.id.editDate);
                     commentsTxt = (EditText)findViewById(R.id.updateComments);
 
+                    String[] splitDate = date.split("/");
+                    String strDay = splitDate[0];
+                    String strMonth = splitDate[1];
+                    String strYear = splitDate[2];
+
+                    d = Integer.parseInt(strDay);
+                    m = Integer.parseInt(strMonth);
+                    y = Integer.parseInt(strYear);
+
+                    //int editM = m + 1;
 
                     titleTxt.setText(name + " - Editor");
                     nameTxt.setText(name);
                     venueTxt.setText(venue);
-                    dateTxt.setText(date);
+                    dateTxt.setText(d + "/" + m + "/" + y);
                     commentsTxt.setText(comments);
 
                     Button update = (Button)findViewById(R.id.updateConcertButton);
@@ -113,6 +114,7 @@ public class UpdateArtist extends Activity {
         }
     }
 
+    //Parts of the following code were taken from a YouTube tutorial
     protected Dialog onCreateDialog(int id)
     {
         switch (id)

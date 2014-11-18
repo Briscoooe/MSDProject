@@ -4,6 +4,7 @@
 * comment each java file + comment code
 * are you sure dialog box
 * rename artist to concert in files
+* search for music by this artist
  */
 
 package com.example.msdproject;
@@ -48,7 +49,6 @@ public class MainActivity extends ListActivity {
     {
         super.onResume();
         addData();
-
     }
 
     public void addData()

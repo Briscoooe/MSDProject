@@ -50,7 +50,6 @@
                android:textColor="@color/grey"
                android:text="@string/setDate"
                android:paddingRight="20sp"/>
-
            <TextView
                style="@style/tableEditText"
                android:id="@+id/editDate"/>

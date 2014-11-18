@@ -200,6 +200,7 @@
     <string name="deleteToast">Concert Deleted!</string>
     <string name="doneUpdating">Done Updating</string>
     <string name="like">My Concerts</string>
+    <string name="listen">Listen</string>
     <string name="setDate">Set Date</string>
     <string name="title_activity_add_concert">AddConcert</string>
     <string name="title_activity_database">Database</string>
@@ -212,6 +213,7 @@
     <string name="updateToast">Concert Updated!</string>
     <string name="venue">Venue </string>
     <string name="viewConcert">View Concert</string>
+    <string name="viewConcertCal">View Concert On Calender</string>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">

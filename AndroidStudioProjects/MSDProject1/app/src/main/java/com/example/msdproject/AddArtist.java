@@ -1,25 +1,33 @@
 package com.example.msdproject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.sql.SQLException;
 import java.util.Calendar;
 
 public class AddArtist extends Activity {
 
     DBManager db = new DBManager(this);
-    //Some of the code involving the dialog and calendar box was taken from a youtube tutorial
+
     static final int dialogID = 1;
     int y, m, d;
+
+    public EditText nameTxt;
+    public EditText venueTxt;
+    public TextView dateTxt;
+    public EditText commentsTxt;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -60,6 +68,7 @@ public class AddArtist extends Activity {
         });
 	}
 
+    //Some of the following code was taken from a YouTube tutorial
     protected Dialog onCreateDialog(int id)
     {
         switch (id)
@@ -86,10 +95,10 @@ public class AddArtist extends Activity {
 
     public void AddArtistButton () throws SQLException
     {
-        EditText nameTxt = (EditText)findViewById(R.id.editName);
-        EditText venueTxt = (EditText)findViewById(R.id.editVenue);
-        TextView dateTxt = (TextView)findViewById(R.id.editDate);
-        EditText commentsTxt = (EditText)findViewById(R.id.editComments);
+        nameTxt = (EditText)findViewById(R.id.editName);
+        venueTxt = (EditText)findViewById(R.id.editVenue);
+        dateTxt = (TextView)findViewById(R.id.editDate);
+        commentsTxt = (EditText)findViewById(R.id.editComments);
 
         if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
             dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty())
@@ -107,13 +116,37 @@ public class AddArtist extends Activity {
                     commentsTxt.getText().toString());
             db.close();
 
-            nameTxt.setText("");
-            venueTxt.setText("");
-            dateTxt.setText("");
-            commentsTxt.setText("");
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialog, int option)
+                {
+                    switch (option)
+                    {
+                        case DialogInterface.BUTTON_POSITIVE:
+                            Intent intent = new Intent(Intent.ACTION_EDIT);
+                            intent.setType("vnd.android.cursor.item/event");
+                            intent.putExtra("allDay", false);
+                            intent.putExtra(CalendarContract.Events.TITLE, nameTxt.getText().toString());
+                            intent.putExtra(CalendarContract.Events.EVENT_LOCATION, venueTxt.getText().toString());
+                            intent.putExtra(CalendarContract.Events.DESCRIPTION, commentsTxt.getText().toString());
+                            startActivity(intent);
 
-            Toast.makeText(AddArtist.this, "Concert Added", Toast.LENGTH_LONG).show();
-            super.finish();
+                            finish();
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            finish();
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog.Builder popUp = new AlertDialog.Builder(this);
+            popUp.setMessage("Would you like to add this concert to your calendar?")
+                    .setPositiveButton("Yes", dialogClickListener)
+                    .setNegativeButton("No", dialogClickListener).show();
+
         }
     }
 }
