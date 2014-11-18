@@ -43,10 +43,18 @@
                 android:text="@string/date"/>
         </TableRow>
         <TableRow>
-            <EditText
+            <Button
+                android:id="@+id/setDateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/event_1"
+                android:background="@android:color/transparent"
+                android:textColor="@color/grey"
+                android:text="@string/setDate"
+                android:paddingRight="20sp"/>
+            <TextView
                 style="@style/tableEditText"
-                android:textColor="@color/nearBlack"
-                android:id="@+id/updateDate"/>
+                android:id="@+id/editDate"/>/>
         </TableRow>
 
         <TableRow>

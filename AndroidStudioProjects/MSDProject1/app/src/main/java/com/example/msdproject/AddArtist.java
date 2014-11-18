@@ -17,6 +17,7 @@ import java.util.Calendar;
 public class AddArtist extends Activity {
 
     DBManager db = new DBManager(this);
+    //Some of the code involving the dialog and calendar box was taken from a youtube tutorial
     static final int dialogID = 1;
     int y, m, d;
 

@@ -1,25 +1,33 @@
 package com.example.msdproject;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.SQLException;
+import java.util.Calendar;
 
 public class UpdateArtist extends Activity {
 
     DBManager db = new DBManager(this);
 
+    //Some of the code involving the dialog and calendar box was taken from a youtube tutorial
+    static final int dialogID = 1;
+    int y, m, d;
+
     public EditText nameTxt;
     public EditText venueTxt;
-    public EditText dateTxt;
+    public TextView dateTxt;
     public EditText commentsTxt;
 
     @Override
@@ -27,6 +35,20 @@ public class UpdateArtist extends Activity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_artist);
+
+        Calendar today = Calendar.getInstance();
+        y = today.get(Calendar.YEAR);
+        m = today.get(Calendar.MONTH);
+        d = today.get(Calendar.DAY_OF_MONTH);
+
+        Button setDate = (Button)findViewById(R.id.setDateButton);
+
+        setDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(dialogID);
+            }
+        });
 
         Intent intent = getIntent();
         final long num = intent.getLongExtra("id", 1);
@@ -47,7 +69,7 @@ public class UpdateArtist extends Activity {
                     TextView titleTxt = (TextView)findViewById(R.id.updateTitle);
                     nameTxt = (EditText)findViewById(R.id.updateName);
                     venueTxt = (EditText)findViewById(R.id.updateVenue);
-                    dateTxt = (EditText)findViewById(R.id.updateDate);
+                    dateTxt = (TextView)findViewById(R.id.editDate);
                     commentsTxt = (EditText)findViewById(R.id.updateComments);
 
 
@@ -90,6 +112,30 @@ public class UpdateArtist extends Activity {
             e.printStackTrace();
         }
     }
+
+    protected Dialog onCreateDialog(int id)
+    {
+        switch (id)
+        {
+            case dialogID:
+                return new DatePickerDialog(this, mDateSetListener, y, m, d);
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener()
+    {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int day)
+        {
+            y = year;
+            m = month;
+            d = day;
+
+            TextView dateTxt = (TextView)findViewById(R.id.editDate);
+            dateTxt.setText(d + "/" + m + "/" + y);
+        }
+    };
 
     public void UpdateArtistButton(String passedName, String passedVenue, String passedDate, String passedComments)
     {
