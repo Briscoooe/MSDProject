@@ -19,20 +19,23 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="ListFont" parent="@android:style/Widget.ListView">
-        <item name="android:textColor">#000000</item>
-        <item name="android:typeface">sans</item>
-    </style>
-
-    <style name="Table_Layout">
-        <item name="android:textSize">50dp</item>
-    </style>
-
     <style name="largeText">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/grey</item>
         <item name="android:textSize">25sp</item>
         <item name="android:padding">3dp</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:gravity">left</item>
+        <item name="android:layout_marginRight">20sp</item>
+    </style>
+
+    <style name="largeText2">
+        <item name="android:textSize">25sp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">@color/bgOrange</item>
+        <item name="android:textColor">@color/nearBlack</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginRight">20sp</item>
     </style>
 
     <style name="titleBar">
@@ -55,10 +58,12 @@
     </style>
 
     <style name="tableEditText">
-        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:inputType">textCapSentences|textNoSuggestions|textAutoComplete</item>
+        <item name="android:background">@color/bgOrange</item>
+        <item name="android:textColor">@color/nearBlack</item>
         <item name="android:gravity">left</item>
         <item name="android:padding">3dip</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_marginRight">20sp</item>
     </style>

@@ -10,16 +10,13 @@
         android:text="@string/like"/>
 
     <ListView
-        android:cacheColorHint="#00000000"
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/likeTitle"
         android:layout_above="@+id/addConcertButton"
         android:paddingLeft="10sp"
-        android:textSize="25sp"
-        android:theme="@style/ListFont"
-        />
+        android:textSize="25sp"/>
 
     <ImageButton
         android:id="@+id/addConcertButton"
@@ -27,6 +24,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/add"
         android:padding="20dp"
+        android:focusable="false"
         android:background="@null"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"

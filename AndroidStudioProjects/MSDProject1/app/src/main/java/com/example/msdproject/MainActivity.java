@@ -1,28 +1,9 @@
 /*
 *************** TO DO ****************
-*
-* Plan for Friday:
-* Click to view, pencil to delete
-* make decent interface
-* "are you sure?" dialog box
-*
-* Monday:
-* multiple click items on list
-*
-* General:
-* look at rawQuery()
-- look at passing in name rather than ROW_ID
-- Reference all code
-- look at try/catch to ensure cleanliness
-- Use extra features, phone sensors, location/map, email. Location of venue (?)
-- examine all files in project (xml and java) to ensure no errors or warnings in sidebar
-- global theme (look up)
-- simple cursor adapter > 2 xml files needed, main_Activity + row.xml
-- comment each java file + comment code
-- ************position on list for onlistitemclick!************
-- startactivityforresult()
-- inputType for date entry
-- use dp rather than px
+* Use extra features, phone sensors, location/map, email. Location of venue (?)
+* comment each java file + comment code
+* are you sure dialog box
+* rename artist to concert in files
  */
 
 package com.example.msdproject;
@@ -59,27 +40,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        /*
-        ImageButton edit = (ImageButton)findViewById(R.id.deleteIcon);
-        edit.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                Intent i = new Intent(MainActivity.this, UpdateArtist.class);
-                startActivity(i);
-            }
-        });*/
-
-
-        /*
-        try {
-            db.reset();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
-
         addData();
-        //db.close();
     }
 
     @Override
@@ -97,10 +58,10 @@ public class MainActivity extends ListActivity {
         {
             db.open();
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                    android.R.layout.simple_list_item_1,
-                    db.getAllConcerts(),
-                    new String[] { "name" },
-                    new int[] { android.R.id.text1 });
+                                          android.R.layout.simple_list_item_1,
+                                          db.getAllConcerts(),
+                                          new String[] { "name" },
+                                          new int[] { android.R.id.text1 });
 
             ListView listView = (ListView) findViewById(android.R.id.list);
             listView.setAdapter(adapter);

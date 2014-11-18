@@ -3,19 +3,20 @@
 
     <string name="app_name">My Concerts</string>
     <string name="like">My Concerts</string>
-    <string name="add">Add new Concert</string>
-    <string name="enterArtist">Enter Artist Name</string>
-    <string name="addButton">Add</string>
+    <string name="add">Add a new concert</string>
+    <string name="addButton">Add Concert</string>
     <string name="addToast">Concert Added!</string>
     <string name="artistName">Artist </string>
     <string name="venue">Venue </string>
     <string name="date">Date </string>
+    <string name="setDate">Set Date</string>
     <string name="comments">Comments </string>
-    <string name="update">Update Concert</string>
+    <string name="update">Edit Concert</string>
     <string name="updateButton">Update</string>
     <string name="updateToast">Concert Updated!</string>
     <string name="delete">Delete Concert</string>
     <string name="deleteToast">Concert Deleted!</string>
+    <string name="doneUpdating">Done Updating</string>
     <string name="deleteButton">Delete</string>
     <string name="viewConcert">View Concert</string>
     <string name="title_activity_update_concert">UpdateConcert</string>

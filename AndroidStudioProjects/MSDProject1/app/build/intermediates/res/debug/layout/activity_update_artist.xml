@@ -21,6 +21,7 @@
         <TableRow>
             <EditText
                 style="@style/tableEditText"
+                android:textColor="@color/nearBlack"
                 android:id="@+id/updateName"/>
         </TableRow>
 
@@ -32,6 +33,7 @@
         <TableRow>
             <EditText
                 style="@style/tableEditText"
+                android:textColor="@color/nearBlack"
                 android:id="@+id/updateVenue"/>
         </TableRow>
 
@@ -43,6 +45,7 @@
         <TableRow>
             <EditText
                 style="@style/tableEditText"
+                android:textColor="@color/nearBlack"
                 android:id="@+id/updateDate"/>
         </TableRow>
 
@@ -54,24 +57,24 @@
         <TableRow>
             <EditText
                 style="@style/tableEditText"
+                android:inputType="textNoSuggestions|textCapSentences|textMultiLine"
+                android:lines="3"
+                android:textColor="@color/nearBlack"
                 android:id="@+id/updateComments"/>
         </TableRow>
-
-
-
     </TableLayout>
 
-    <ImageButton
+    <Button
         android:id="@+id/updateConcertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/done"
-        android:padding="20dp"
+        android:drawableRight="@drawable/done"
         android:background="@null"
+        android:textColor="@color/grey"
+        android:text="@string/doneUpdating"
+        android:padding="20dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-
 </RelativeLayout>
 <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_update_artist.xml -->

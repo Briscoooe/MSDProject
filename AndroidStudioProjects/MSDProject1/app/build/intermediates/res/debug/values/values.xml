@@ -24,7 +24,7 @@
     <color name="background_material_light">#ffeeeeee</color>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->
     <eat-comment/>
-    <color name="black">#666</color>
+    <color name="bgOrange">#FFBD73</color>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
@@ -42,6 +42,7 @@
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="green">#ff00ff00</color>
+    <color name="grey">#666</color>
     <color name="headingOrange">#FF8700</color>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment/>
@@ -56,6 +57,11 @@
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="nearBlack">#3D3D3D</color>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
     <color name="primary_material_dark">#ff212121</color>
@@ -182,8 +188,8 @@
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
-    <string name="add">Add new Concert</string>
-    <string name="addButton">Add</string>
+    <string name="add">Add a new concert</string>
+    <string name="addButton">Add Concert</string>
     <string name="addToast">Concert Added!</string>
     <string name="app_name">My Concerts</string>
     <string name="artistName">Artist </string>
@@ -192,15 +198,16 @@
     <string name="delete">Delete Concert</string>
     <string name="deleteButton">Delete</string>
     <string name="deleteToast">Concert Deleted!</string>
-    <string name="enterArtist">Enter Artist Name</string>
+    <string name="doneUpdating">Done Updating</string>
     <string name="like">My Concerts</string>
+    <string name="setDate">Set Date</string>
     <string name="title_activity_add_concert">AddConcert</string>
     <string name="title_activity_database">Database</string>
     <string name="title_activity_dbmanager">DBManager</string>
     <string name="title_activity_delete_concert">DeleteConcert</string>
     <string name="title_activity_update_concert">UpdateConcert</string>
     <string name="title_activity_view_artist">ViewArtist</string>
-    <string name="update">Update Concert</string>
+    <string name="update">Edit Concert</string>
     <string name="updateButton">Update</string>
     <string name="updateToast">Concert Updated!</string>
     <string name="venue">Venue </string>
@@ -977,14 +984,6 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
-    <style name="ListFont" parent="@android:style/Widget.ListView">
-        <item name="android:textColor">#000000</item>
-        <item name="android:typeface">sans</item>
-    </style>
-    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
-    <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
         <item name="buttonBarStyle">@android:style/ButtonBar</item>
@@ -1151,13 +1150,6 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
     <style name="RtlOverlay.Widget.AppCompat.SearchView.MagIcon" parent="android:Widget">
         <item name="android:layout_marginLeft">@dimen/abc_dropdownitem_text_padding_left</item>
     </style>
-    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
-    <style name="Table_Layout">
-        <item name="android:textSize">50dp</item>
-    </style>
-    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
-    <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
     <style name="TextAppearance.AppCompat.Body2" parent="Base.TextAppearance.AppCompat.Body2"/>
@@ -1279,10 +1271,21 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="largeText">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/grey</item>
         <item name="android:textSize">25sp</item>
         <item name="android:padding">3dp</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:gravity">left</item>
+        <item name="android:layout_marginRight">20sp</item>
+    </style>
+    <style name="largeText2">
+        <item name="android:textSize">25sp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">@color/bgOrange</item>
+        <item name="android:textColor">@color/nearBlack</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginRight">20sp</item>
     </style>
     <style name="my_table">
         <item name="android:layout_width">match_parent</item>
@@ -1291,10 +1294,12 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
         <item name="android:paddingLeft">20sp</item>
     </style>
     <style name="tableEditText">
-        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:inputType">textCapSentences|textNoSuggestions|textAutoComplete</item>
+        <item name="android:background">@color/bgOrange</item>
+        <item name="android:textColor">@color/nearBlack</item>
         <item name="android:gravity">left</item>
         <item name="android:padding">3dip</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_marginRight">20sp</item>
     </style>
