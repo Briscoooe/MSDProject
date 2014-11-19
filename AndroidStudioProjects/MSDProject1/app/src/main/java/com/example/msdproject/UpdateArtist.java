@@ -89,7 +89,7 @@ public class UpdateArtist extends Activity {
                             if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
                                     dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty() )
                             {
-                                Toast.makeText(UpdateArtist.this, "Error! Please fill in all fields", Toast.LENGTH_LONG).show();
+                                Toast.makeText(UpdateArtist.this, "Please fill in all fields!", Toast.LENGTH_LONG).show();
                             }
                             else
                             {

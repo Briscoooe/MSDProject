@@ -7,66 +7,71 @@
     <TextView
         style="@style/titleBar"
         android:id="@+id/addTitle"
-        android:text="@string/add"			/>
-    
-   <TableLayout
+        android:text="@string/add"          />
+
+    <TableLayout
         style="@style/my_table"
-       	android:id="@+id/addTable"
-	    android:layout_below="@+id/addTitle">
-	    <TableRow>
-	        <TextView
+        android:id="@+id/addTable"
+        android:layout_below="@+id/addTitle">
+        <TableRow>
+            <TextView
                 style="@style/largeText"
-	            android:text="@string/artistName"/>
+                android:text="@string/artistName"/>
         </TableRow>
         <TableRow>
-	        <EditText
+            <EditText
                 style="@style/tableEditText"
                 android:id="@+id/editName"/>
-	    </TableRow>
+        </TableRow>
 
-	    <TableRow>
-	        <TextView
+        <TableRow>
+            <TextView
                 style="@style/largeText"
-	            android:text="@string/venue"/>
+                android:text="@string/venue"/>
         </TableRow>
         <TableRow>
-	        <EditText
+            <EditText
                 style="@style/tableEditText"
                 android:id="@+id/editVenue"/>
-	    </TableRow>
+        </TableRow>
 
-	    <TableRow>
-	        <TextView
+        <TableRow>
+            <TextView
                 style="@style/largeText"
-	            android:text="@string/date"/>
-       </TableRow>
-       <TableRow>
-           <Button
-               android:id="@+id/setDateButton"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:drawableRight="@drawable/event_1"
-               android:background="@android:color/transparent"
-               android:textColor="@color/grey"
-               android:text="@string/setDate"
-               android:paddingRight="20sp"/>
-           <TextView
-               style="@style/tableEditText"
-               android:id="@+id/editDate"/>
-	   </TableRow>
+                android:text="@string/date"/>
+        </TableRow>
+        <TableRow>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content">
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/event_1"
+                    android:id="@+id/setDateButton"
+                    android:text="@string/setDate"/>
+                <TextView
+                    style="@style/tableEditText"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editDate"/>
+            </LinearLayout>
+        </TableRow>
 
-	   <TableRow>
-	        <TextView
+        <TableRow>
+            <TextView
                 style="@style/largeText"
-	            android:text="@string/comments"/>
-       </TableRow>
-       <TableRow>
-	        <EditText
+                android:text="@string/comments"/>
+        </TableRow>
+        <TableRow>
+            <EditText
                 style="@style/tableEditText"
                 android:inputType="textNoSuggestions|textCapSentences|textMultiLine"
                 android:lines="3"
                 android:id="@+id/editComments"/>
-	    </TableRow>
+        </TableRow>
     </TableLayout>
 
     <Button
@@ -81,5 +86,4 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-</RelativeLayout>
-<!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_add_artist.xml -->
+</RelativeLayout><!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_add_artist.xml -->

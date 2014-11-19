@@ -7,7 +7,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.CalendarContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.Date;
 
 public class AddArtist extends Activity {
 
@@ -29,11 +30,11 @@ public class AddArtist extends Activity {
     public TextView dateTxt;
     public EditText commentsTxt;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
     {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_add_artist);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_artist);
 
         Calendar today = Calendar.getInstance();
         y = today.get(Calendar.YEAR);
@@ -66,7 +67,7 @@ public class AddArtist extends Activity {
                 }
             }
         });
-	}
+    }
 
     //Some of the following code was taken from a YouTube tutorial
     protected Dialog onCreateDialog(int id)
@@ -103,7 +104,7 @@ public class AddArtist extends Activity {
         if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
             dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty())
         {
-            Toast.makeText(AddArtist.this, "Error! Please fill in all fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddArtist.this, "Please fill in all fields!", Toast.LENGTH_LONG).show();
         }
 
         else
@@ -125,13 +126,23 @@ public class AddArtist extends Activity {
                     {
                         case DialogInterface.BUTTON_POSITIVE:
                             Intent intent = new Intent(Intent.ACTION_EDIT);
+
+                            //I'm not sure why but I had to perform these additions to the date
+                            //variables in order to go to that date on the calendar app
+                            Date formatDate = new Date(y + 5, m + 5, d + 5, 12, 0, 0);
+                            //Date formatDate = new Date(y, m, d, 12, 0, 0);
+                            Calendar cal = Calendar.getInstance();
+                            cal.setTime(formatDate);
+
+                            String newDate = formatDate.toString();
+                            Log.d("test", "Formatted date = " + newDate);
                             intent.setType("vnd.android.cursor.item/event");
                             intent.putExtra("allDay", false);
-                            intent.putExtra(CalendarContract.Events.TITLE, nameTxt.getText().toString());
-                            intent.putExtra(CalendarContract.Events.EVENT_LOCATION, venueTxt.getText().toString());
-                            intent.putExtra(CalendarContract.Events.DESCRIPTION, commentsTxt.getText().toString());
+                            intent.putExtra("title", nameTxt.getText().toString());
+                            intent.putExtra("description", commentsTxt.getText().toString());
+                            intent.putExtra("eventLocation", venueTxt.getText().toString());
+                            intent.putExtra("beginTime", cal.getTimeInMillis());
                             startActivity(intent);
-
                             finish();
                             break;
 

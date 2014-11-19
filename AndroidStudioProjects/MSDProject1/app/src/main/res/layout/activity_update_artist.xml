@@ -42,19 +42,26 @@
                 style="@style/largeText"
                 android:text="@string/date"/>
         </TableRow>
+
         <TableRow>
-            <Button
-                android:id="@+id/setDateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/event_1"
-                android:background="@android:color/transparent"
-                android:textColor="@color/grey"
-                android:text="@string/setDate"
-                android:paddingRight="20sp"/>
-            <TextView
-                style="@style/tableEditText"
-                android:id="@+id/editDate"/>/>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content">
+                <Button
+                    android:id="@+id/setDateButton"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/grey"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/event_1"
+                    android:text="@string/setDate"/>
+                <TextView
+                    style="@style/tableEditText"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editDate"/>
+            </LinearLayout>
         </TableRow>
 
         <TableRow>

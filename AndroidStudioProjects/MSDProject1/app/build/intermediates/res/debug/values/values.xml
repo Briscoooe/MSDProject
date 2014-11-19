@@ -213,10 +213,10 @@
     <string name="updateToast">Concert Updated!</string>
     <string name="venue">Venue </string>
     <string name="viewConcert">View Concert</string>
-    <string name="viewConcertCal">View Concert On Calender</string>
+    <string name="viewConcertCal">Tap icon to view concert on calender</string>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -1287,13 +1287,17 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
         <item name="android:textColor">@color/nearBlack</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">left</item>
-        <item name="android:layout_marginRight">20sp</item>
     </style>
     <style name="my_table">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:stretchColumns">1</item>
-        <item name="android:paddingLeft">20sp</item>
+        <item name="android:padding">15sp</item>
+    </style>
+    <style name="smallIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:padding">2dp</item>
     </style>
     <style name="tableEditText">
         <item name="android:inputType">textCapSentences|textNoSuggestions|textAutoComplete</item>
@@ -1303,7 +1307,6 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
         <item name="android:padding">3dip</item>
         <item name="android:textSize">25sp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_marginRight">20sp</item>
     </style>
     <style name="titleBar">
         <item name="android:textColor">#fff</item>

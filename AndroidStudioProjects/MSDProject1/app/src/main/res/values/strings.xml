@@ -20,7 +20,7 @@
     <string name="doneUpdating">Done Updating</string>
     <string name="deleteButton">Delete</string>
     <string name="viewConcert">View Concert</string>
-    <string name="viewConcertCal">View Concert On Calender</string>
+    <string name="viewConcertCal">Tap icon to view concert on calender</string>
     <string name="title_activity_update_concert">UpdateConcert</string>
     <string name="title_activity_add_concert">AddConcert</string>
     <string name="title_activity_delete_concert">DeleteConcert</string>

@@ -11,6 +11,7 @@ package com.example.msdproject;
 
 import android.app.ListActivity;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.content.Intent;
 import android.widget.ImageButton;
@@ -19,6 +20,7 @@ import android.view.View;
 import java.sql.SQLException;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
@@ -58,10 +60,13 @@ public class MainActivity extends ListActivity {
         {
             db.open();
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                                          android.R.layout.simple_list_item_1,
+                                          android.R.layout.simple_list_item_2,
                                           db.getAllConcerts(),
-                                          new String[] { "name" },
-                                          new int[] { android.R.id.text1 });
+                                          new String[] { "name", "date" },
+                                          new int[] { android.R.id.text1, android.R.id.text2 });
+
+            //TextView tv = (TextView)findViewById(android.R.id.text1);
+            //tv.setTextColor(Color.BLACK);
 
             ListView listView = (ListView) findViewById(android.R.id.list);
             listView.setAdapter(adapter);

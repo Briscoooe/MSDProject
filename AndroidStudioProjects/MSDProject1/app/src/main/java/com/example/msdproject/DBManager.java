@@ -107,8 +107,7 @@ public class DBManager {
                         null,
                         null,
                         null,
-                        null,
-                        null
+                        COL_NAME+ " ASC"
                 );
     }
 
