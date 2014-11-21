@@ -92,7 +92,7 @@ public class AddArtist extends Activity {
             d = day;
 
             TextView dateTxt = (TextView)findViewById(R.id.editDate);
-            dateTxt.setText(d + "/" + m + "/" + y);
+            dateTxt.setText(d + "/" + (m + 1) + "/" + y);
         }
     };
 
@@ -113,11 +113,22 @@ public class AddArtist extends Activity {
         {
 
             db.open();
-            Log.d("test", "Value of dateTxt = " + dateTxt.getText().toString());
+
+            String date = dateTxt.getText().toString();
+            String[] splitDate = date.split("/");
+            String strDay = splitDate[0];
+            String strMonth = splitDate[1];
+            String strYear = splitDate[2];
+
+            d = Integer.parseInt(strDay);
+            m = Integer.parseInt(strMonth);
+            y = Integer.parseInt(strYear);
+
+            String datePlusOne = (d + "/" + (m - 1) + "/" +y);
 
             long id = db.insertConcert(nameTxt.getText().toString(),
                     venueTxt.getText().toString(),
-                    dateTxt.getText().toString(),
+                    datePlusOne,
                     commentsTxt.getText().toString());
             db.close();
 
@@ -132,7 +143,7 @@ public class AddArtist extends Activity {
                             Intent intent = new Intent(Intent.ACTION_EDIT);
                             intent.setType("vnd.android.cursor.item/event");
 
-                            GregorianCalendar cal = new GregorianCalendar(y, m, d);
+                            GregorianCalendar cal = new GregorianCalendar(y, (m - 1), d);
                             intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
                                     cal.getTimeInMillis());
                             intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY,
@@ -144,14 +155,7 @@ public class AddArtist extends Activity {
                             intent.putExtra(CalendarContract.Events.DESCRIPTION,
                                     commentsTxt.getText().toString());
 
-                            Log.d("test", "Date being passed = " + cal.getTimeInMillis());
-
                             startActivity(intent);
-
-                            //intent.putExtra("allDay", false);
-                            //intent.putExtra("title", nameTxt.getText().toString());
-                            //intent.putExtra("description", commentsTxt.getText().toString());
-                            //intent.putExtra("eventLocation", venueTxt.getText().toString());
                             finish();
                             break;
 
