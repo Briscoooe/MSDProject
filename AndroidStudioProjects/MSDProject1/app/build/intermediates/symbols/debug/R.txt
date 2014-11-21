@@ -384,7 +384,7 @@ int id collapseActionView 0x7f070011
 int id commentIcon 0x7f070059
 int id decor_content_parent 0x7f070031
 int id default_activity_button 0x7f070026
-int id deleteConcertButton 0x7f070052
+int id deleteConcertButton 0x7f07005a
 int id dialog 0x7f070012
 int id disableHome 0x7f070009
 int id dropdown 0x7f070013
@@ -441,11 +441,11 @@ int id updateName 0x7f07004c
 int id updateTitle 0x7f07004b
 int id updateVenue 0x7f07004d
 int id useLogo 0x7f070004
-int id venueIcon 0x7f070055
-int id viewComments 0x7f07005a
+int id venueIcon 0x7f070054
+int id viewComments 0x7f070055
 int id viewDate 0x7f070058
 int id viewEvent 0x7f070057
-int id viewName 0x7f070054
+int id viewName 0x7f070052
 int id viewTitle 0x7f070050
 int id viewVenue 0x7f070056
 int id withText 0x7f070010

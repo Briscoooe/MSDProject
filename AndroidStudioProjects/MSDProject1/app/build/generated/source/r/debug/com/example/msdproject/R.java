@@ -1355,7 +1355,7 @@ containing a value of this type.
         public static final int commentIcon=0x7f070059;
         public static final int decor_content_parent=0x7f070031;
         public static final int default_activity_button=0x7f070026;
-        public static final int deleteConcertButton=0x7f070052;
+        public static final int deleteConcertButton=0x7f07005a;
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070009;
         public static final int dropdown=0x7f070013;
@@ -1412,11 +1412,11 @@ containing a value of this type.
         public static final int updateTitle=0x7f07004b;
         public static final int updateVenue=0x7f07004d;
         public static final int useLogo=0x7f070004;
-        public static final int venueIcon=0x7f070055;
-        public static final int viewComments=0x7f07005a;
+        public static final int venueIcon=0x7f070054;
+        public static final int viewComments=0x7f070055;
         public static final int viewDate=0x7f070058;
         public static final int viewEvent=0x7f070057;
-        public static final int viewName=0x7f070054;
+        public static final int viewName=0x7f070052;
         public static final int viewTitle=0x7f070050;
         public static final int viewVenue=0x7f070056;
         public static final int withText=0x7f070010;
