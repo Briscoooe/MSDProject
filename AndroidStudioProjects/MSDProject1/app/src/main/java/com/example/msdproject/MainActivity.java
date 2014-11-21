@@ -43,6 +43,13 @@ public class MainActivity extends ListActivity {
             }
         });
 
+        /*
+        try {
+            db.reset();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
+
         addData();
     }
 
@@ -64,9 +71,6 @@ public class MainActivity extends ListActivity {
                                           db.getAllConcerts(),
                                           new String[] { "name", "date" },
                                           new int[] { android.R.id.text1, android.R.id.text2 });
-
-            //TextView tv = (TextView)findViewById(android.R.id.text1);
-            //tv.setTextColor(Color.BLACK);
 
             ListView listView = (ListView) findViewById(android.R.id.list);
             listView.setAdapter(adapter);

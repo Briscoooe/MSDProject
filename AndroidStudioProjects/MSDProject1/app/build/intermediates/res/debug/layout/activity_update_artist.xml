@@ -1,95 +1,101 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="${relativePackage}.${activityClass}" >
+
+<TextView
+    style="@style/titleBar"
+    android:id="@+id/updateTitle"
+    android:text="@string/update"/>
+
+<TextView
+    style="@style/largeText"
+    android:id="@+id/viewName"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/artistIcon"
+    android:layout_alignTop="@+id/artistIcon"
+    android:layout_marginRight="20dp"
+    android:layout_above="@+id/venueIcon"/>
 
-    <TextView
-        style="@style/titleBar"
-        android:id="@+id/updateTitle"
-        android:text="@string/update"/>
 
-    <TableLayout
-        style="@style/my_table"
-        android:id="@+id/addTable"
-        android:layout_below="@id/updateTitle">
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/artistName"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                style="@style/tableEditText"
-                android:textColor="@color/nearBlack"
-                android:id="@+id/updateName"/>
-        </TableRow>
+    <RelativeLayout
+        android:layout_below="@id/updateTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+        <TextView
+            style="@style/largeText"
+            android:paddingTop="0dp"
+            android:id="@+id/artistTxt"
+            android:text="@string/artistName"/>
+        <EditText
+            style="@style/tableEditText"
+            android:id="@+id/updateName"
+            android:layout_below="@id/artistTxt"/>
 
-        <TableRow>
-            <TextView
-                android:text="@string/venue"
-                style="@style/largeText"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                style="@style/tableEditText"
-                android:textColor="@color/nearBlack"
-                android:id="@+id/updateVenue"/>
-        </TableRow>
+        <TextView
+            style="@style/largeText"
+            android:id="@+id/venueTxt"
+            android:layout_below="@id/updateName"
+            android:text="@string/venue"/>
+        <EditText
+            style="@style/tableEditText"
+            android:id="@+id/updateVenue"
+            android:layout_below="@id/venueTxt"/>
 
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/date"/>
-        </TableRow>
+        <TextView
+            style="@style/largeText"
+            android:id="@+id/dateTxt"
+            android:layout_below="@id/updateVenue"
+            android:text="@string/date"/>
+        <Button
+            android:id="@+id/setDateButton"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateTxt"
+            android:textColor="@color/grey"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/event_1"
+            android:text="@string/setDate"/>
+        <TextView
+            style="@style/tableEditText"
+            android:id="@+id/editDate"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/dateTxt"
+            android:layout_toRightOf="@id/setDateButton"/>
 
-        <TableRow>
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content">
-                <Button
-                    android:id="@+id/setDateButton"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:textColor="@color/grey"
-                    android:background="@android:color/transparent"
-                    android:drawableRight="@drawable/event_1"
-                    android:text="@string/setDate"/>
-                <TextView
-                    style="@style/tableEditText"
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editDate"/>
-            </LinearLayout>
-        </TableRow>
 
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/comments"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                style="@style/tableEditText"
-                android:inputType="textNoSuggestions|textCapSentences|textMultiLine"
-                android:lines="3"
-                android:textColor="@color/nearBlack"
-                android:id="@+id/updateComments"/>
-        </TableRow>
-    </TableLayout>
+        <TextView
+            style="@style/largeText"
+            android:layout_marginTop="10dp"
+            android:id="@+id/commentsTxt"
+            android:layout_below="@id/editDate"
+            android:text="@string/comments"/>
+        <EditText
+            style="@style/tableEditText"
+            android:id="@+id/updateComments"
+            android:gravity="top|left"
+            android:inputType="textNoSuggestions|textCapSentences|textMultiLine"
+            android:layout_below="@id/commentsTxt"
+            android:lines="3"/>
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/updateConcertButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/done"
-        android:background="@null"
-        android:textColor="@color/grey"
-        android:text="@string/doneUpdating"
-        android:padding="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+
+<Button
+    android:id="@+id/updateConcertButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:textColor="@color/grey"
+    android:text="@string/doneUpdating"
+    android:padding="10dp"
+    android:drawableRight="@drawable/done"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
 <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_update_artist.xml -->

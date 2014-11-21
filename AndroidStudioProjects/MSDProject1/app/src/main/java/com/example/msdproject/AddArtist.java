@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class AddArtist extends Activity {
 
@@ -111,6 +113,8 @@ public class AddArtist extends Activity {
         {
 
             db.open();
+            Log.d("test", "Value of dateTxt = " + dateTxt.getText().toString());
+
             long id = db.insertConcert(nameTxt.getText().toString(),
                     venueTxt.getText().toString(),
                     dateTxt.getText().toString(),
@@ -126,23 +130,28 @@ public class AddArtist extends Activity {
                     {
                         case DialogInterface.BUTTON_POSITIVE:
                             Intent intent = new Intent(Intent.ACTION_EDIT);
-
-                            //I'm not sure why but I had to perform these additions to the date
-                            //variables in order to go to that date on the calendar app
-                            Date formatDate = new Date(y + 5, m + 5, d + 5, 12, 0, 0);
-                            //Date formatDate = new Date(y, m, d, 12, 0, 0);
-                            Calendar cal = Calendar.getInstance();
-                            cal.setTime(formatDate);
-
-                            String newDate = formatDate.toString();
-                            Log.d("test", "Formatted date = " + newDate);
                             intent.setType("vnd.android.cursor.item/event");
-                            intent.putExtra("allDay", false);
-                            intent.putExtra("title", nameTxt.getText().toString());
-                            intent.putExtra("description", commentsTxt.getText().toString());
-                            intent.putExtra("eventLocation", venueTxt.getText().toString());
-                            intent.putExtra("beginTime", cal.getTimeInMillis());
+
+                            GregorianCalendar cal = new GregorianCalendar(y, m, d);
+                            intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                                    cal.getTimeInMillis());
+                            intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY,
+                                    false);
+                            intent.putExtra(CalendarContract.Events.TITLE,
+                                    nameTxt.getText().toString());
+                            intent.putExtra(CalendarContract.Events.EVENT_LOCATION,
+                                    venueTxt.getText().toString());
+                            intent.putExtra(CalendarContract.Events.DESCRIPTION,
+                                    commentsTxt.getText().toString());
+
+                            Log.d("test", "Date being passed = " + cal.getTimeInMillis());
+
                             startActivity(intent);
+
+                            //intent.putExtra("allDay", false);
+                            //intent.putExtra("title", nameTxt.getText().toString());
+                            //intent.putExtra("description", commentsTxt.getText().toString());
+                            //intent.putExtra("eventLocation", venueTxt.getText().toString());
                             finish();
                             break;
 

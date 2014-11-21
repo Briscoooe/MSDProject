@@ -1275,7 +1275,9 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
     <style name="largeText">
         <item name="android:textColor">@color/grey</item>
         <item name="android:textSize">25sp</item>
-        <item name="android:padding">3dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">left</item>
         <item name="android:layout_marginRight">20sp</item>
@@ -1288,11 +1290,6 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">left</item>
     </style>
-    <style name="my_table">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">15sp</item>
-    </style>
     <style name="smallIcon">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
@@ -1303,8 +1300,9 @@ m>        <item name="android:textColorLink">@color/link_text_material_dark</ite
         <item name="android:inputType">textCapSentences|textNoSuggestions|textAutoComplete</item>
         <item name="android:background">@color/bgOrange</item>
         <item name="android:textColor">@color/nearBlack</item>
-        <item name="android:gravity">left</item>
-        <item name="android:padding">3dip</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">25sp</item>
         <item name="android:layout_weight">1</item>
     </style>

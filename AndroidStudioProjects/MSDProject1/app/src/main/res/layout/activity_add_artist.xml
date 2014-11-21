@@ -7,72 +7,82 @@
     <TextView
         style="@style/titleBar"
         android:id="@+id/addTitle"
-        android:text="@string/add"          />
+        android:text="@string/add"/>
 
-    <TableLayout
-        style="@style/my_table"
-        android:id="@+id/addTable"
-        android:layout_below="@+id/addTitle">
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/artistName"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                style="@style/tableEditText"
-                android:id="@+id/editName"/>
-        </TableRow>
+    <TextView
+        style="@style/largeText"
+        android:id="@+id/viewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/artistIcon"
+        android:layout_alignTop="@+id/artistIcon"
+        android:layout_marginRight="20dp"
+        android:layout_above="@+id/venueIcon"/>
 
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/venue"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                style="@style/tableEditText"
-                android:id="@+id/editVenue"/>
-        </TableRow>
 
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/date"/>
-        </TableRow>
-        <TableRow>
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content">
-                <Button
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableRight="@drawable/event_1"
-                    android:id="@+id/setDateButton"
-                    android:text="@string/setDate"/>
-                <TextView
-                    style="@style/tableEditText"
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editDate"/>
-            </LinearLayout>
-        </TableRow>
+    <RelativeLayout
+            android:layout_below="@id/addTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+        <TextView
+            style="@style/largeText"
+            android:paddingTop="0dp"
+            android:id="@+id/artistTxt"
+            android:text="@string/artistName"/>
+        <EditText
+            style="@style/tableEditText"
+            android:id="@+id/editName"
+            android:layout_below="@id/artistTxt"/>
 
-        <TableRow>
-            <TextView
-                style="@style/largeText"
-                android:text="@string/comments"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                style="@style/tableEditText"
-                android:inputType="textNoSuggestions|textCapSentences|textMultiLine"
-                android:lines="3"
-                android:id="@+id/editComments"/>
-        </TableRow>
-    </TableLayout>
+        <TextView
+            style="@style/largeText"
+            android:id="@+id/venueTxt"
+            android:layout_below="@id/editName"
+            android:text="@string/venue"/>
+        <EditText
+            style="@style/tableEditText"
+            android:id="@+id/editVenue"
+            android:layout_below="@id/venueTxt"/>
+
+        <TextView
+            style="@style/largeText"
+            android:id="@+id/dateTxt"
+            android:layout_below="@id/editVenue"
+            android:text="@string/date"/>
+        <Button
+            android:id="@+id/setDateButton"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/grey"
+            android:layout_below="@id/dateTxt"
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/event_1"
+            android:text="@string/setDate"/>
+        <TextView
+            style="@style/tableEditText"
+            android:id="@+id/editDate"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/dateTxt"
+            android:layout_toRightOf="@id/setDateButton"/>
+
+
+        <TextView
+            style="@style/largeText"
+            android:layout_marginTop="10dp"
+            android:id="@+id/commentsTxt"
+            android:layout_below="@id/editDate"
+            android:text="@string/comments"/>
+        <EditText
+            style="@style/tableEditText"
+            android:id="@+id/editComments"
+            android:gravity="top|left"
+            android:inputType="textNoSuggestions|textCapSentences|textMultiLine"
+            android:layout_below="@id/commentsTxt"
+            android:lines="3"/>
+    </RelativeLayout>
+
 
     <Button
         android:id="@+id/addButton"
@@ -81,7 +91,7 @@
         android:drawableRight="@drawable/add"
         android:background="@android:color/transparent"
         android:textColor="@color/grey"
-        android:padding="20dp"
+        android:padding="10dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
