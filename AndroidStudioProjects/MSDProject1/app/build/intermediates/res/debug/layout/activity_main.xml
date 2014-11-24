@@ -14,20 +14,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/likeTitle"
-        android:layout_above="@+id/addConcertButton"
-        android:paddingLeft="10sp"
         android:textSize="25sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageButton
         android:id="@+id/addConcertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/add"
+        android:src="@drawable/add_orange3"
         android:padding="10dp"
         android:focusable="false"
         android:background="@null"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 
 </RelativeLayout><!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/layout/activity_main.xml -->

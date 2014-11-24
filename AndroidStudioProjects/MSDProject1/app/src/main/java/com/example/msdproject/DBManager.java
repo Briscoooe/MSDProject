@@ -29,14 +29,13 @@ public class DBManager {
             "comments text not null, " +
             "date text not null);";
 
-    private final Context context;
+    private  Context context;
 
     private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
 
     public DBManager(Context ctx)
     {
-        super();
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
     }
@@ -64,6 +63,9 @@ public class DBManager {
             db.execSQL("drop table if exists Concert_Info");
             onCreate(db);*/
         }
+    }
+
+    public DBManager (){
     }
 
     public DBManager open() throws SQLException

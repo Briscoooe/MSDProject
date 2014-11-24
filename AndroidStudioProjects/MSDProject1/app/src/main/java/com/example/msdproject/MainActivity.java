@@ -11,16 +11,15 @@ package com.example.msdproject;
 
 import android.app.ListActivity;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.content.Intent;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.view.View;
 import java.sql.SQLException;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
@@ -43,13 +42,6 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        /*
-        try {
-            db.reset();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
-
         addData();
     }
 
@@ -67,10 +59,10 @@ public class MainActivity extends ListActivity {
         {
             db.open();
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                                          android.R.layout.simple_list_item_2,
+                                          R.layout.row_layout,
                                           db.getAllConcerts(),
-                                          new String[] { "name", "date" },
-                                          new int[] { android.R.id.text1, android.R.id.text2 });
+                                          new String[] { "name", "venue" },
+                                          new int[] { R.id.listName, R.id.listDate });
 
             ListView listView = (ListView) findViewById(android.R.id.list);
             listView.setAdapter(adapter);

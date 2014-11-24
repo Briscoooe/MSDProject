@@ -81,6 +81,11 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="statusBar">#FFB700</color>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/color.xml -->

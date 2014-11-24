@@ -88,7 +88,7 @@
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/add"
+        android:drawableRight="@drawable/add_orange3"
         android:background="@android:color/transparent"
         android:textColor="@color/grey"
         android:padding="10dp"

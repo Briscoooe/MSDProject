@@ -124,11 +124,11 @@ public class AddArtist extends Activity {
             m = Integer.parseInt(strMonth);
             y = Integer.parseInt(strYear);
 
-            String datePlusOne = (d + "/" + (m - 1) + "/" +y);
+            String dateMinusOne = (d + "/" + (m - 1) + "/" +y);
 
             long id = db.insertConcert(nameTxt.getText().toString(),
                     venueTxt.getText().toString(),
-                    datePlusOne,
+                    dateMinusOne,
                     commentsTxt.getText().toString());
             db.close();
 

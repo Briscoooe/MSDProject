@@ -72,12 +72,10 @@ public class UpdateArtist extends Activity {
                     m = Integer.parseInt(strMonth);
                     y = Integer.parseInt(strYear);
 
-                    //int editM = m + 1;
-
                     titleTxt.setText(name + " - Editor");
                     nameTxt.setText(name);
                     venueTxt.setText(venue);
-                    dateTxt.setText(d + "/" + m + "/" + y);
+                    dateTxt.setText(d + "/" + (m + 1) + "/" + y);
                     commentsTxt.setText(comments);
 
                     Button update = (Button)findViewById(R.id.updateConcertButton);
@@ -96,10 +94,10 @@ public class UpdateArtist extends Activity {
 
                                 String updatedName = nameTxt.getText().toString();
                                 String updatedVenue = venueTxt.getText().toString();
-                                String updatedDate = dateTxt.getText().toString();
+                                String dateMinusOne = (d + "/" + (m - 1) + "/" +y);
                                 String updatedComments = commentsTxt.getText().toString();
 
-                                UpdateArtistButton(updatedName,updatedVenue,updatedDate,updatedComments);
+                                UpdateArtistButton(updatedName,updatedVenue,dateMinusOne,updatedComments);
                             }
                         }
                     });
@@ -135,7 +133,7 @@ public class UpdateArtist extends Activity {
             d = day;
 
             TextView dateTxt = (TextView)findViewById(R.id.editDate);
-            dateTxt.setText(d + "/" + m + "/" + y);
+            dateTxt.setText(d + "/" + (m + 1) + "/" + y);
         }
     };
 
