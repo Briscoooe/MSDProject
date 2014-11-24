@@ -29,4 +29,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_view_artist">ViewArtist</string>
 
+    <string-array name="sortBy">
+        <item>Artist - Ascending</item>
+        <item>Artist - Descending</item>
+        <item>Venue - Ascending</item>
+        <item>Venue - Descending</item>
+    </string-array>
 </resources>

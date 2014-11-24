@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.util.Log;
@@ -32,6 +33,8 @@ public class AddArtist extends Activity {
     public TextView dateTxt;
     public EditText commentsTxt;
 
+    MediaPlayer guitarSound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -42,6 +45,8 @@ public class AddArtist extends Activity {
         y = today.get(Calendar.YEAR);
         m = today.get(Calendar.MONTH);
         d = today.get(Calendar.DAY_OF_MONTH);
+
+        guitarSound = MediaPlayer.create(this, R.raw.guitar);
 
         Button setDate = (Button)findViewById(R.id.setDateButton);
 
@@ -155,11 +160,14 @@ public class AddArtist extends Activity {
                             intent.putExtra(CalendarContract.Events.DESCRIPTION,
                                     commentsTxt.getText().toString());
 
+                            guitarSound.start();
+
                             startActivity(intent);
                             finish();
                             break;
 
                         case DialogInterface.BUTTON_NEGATIVE:
+                            guitarSound.start();
                             finish();
                             break;
                     }

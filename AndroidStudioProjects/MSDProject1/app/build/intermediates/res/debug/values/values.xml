@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="sortBy">
+        <item>Artist - Ascending</item>
+        <item>Artist - Descending</item>
+        <item>Venue - Ascending</item>
+        <item>Venue - Descending</item>
+    </string-array>
     <!-- From: file:/home/brian/AndroidStudioProjects/MSDProject1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>

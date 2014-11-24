@@ -96,7 +96,7 @@ public class DBManager {
 
     }
 
-    public Cursor getAllConcerts() {
+    public Cursor getAllConcertsNameASC() {
         return db.query(DB_TABLE, new String[]
                         {
                                 COL_ROWID,
@@ -111,6 +111,57 @@ public class DBManager {
                         null,
                         COL_NAME+ " ASC"
                 );
+    }
+
+    public Cursor getAllConcertsNameDESC() {
+        return db.query(DB_TABLE, new String[]
+                        {
+                                COL_ROWID,
+                                COL_NAME,
+                                COL_VENUE,
+                                COL_DATE,
+                                COL_COMMENTS
+                        },
+                null,
+                null,
+                null,
+                null,
+                COL_NAME+ " DESC"
+        );
+    }
+
+    public Cursor getAllConcertsVenueASC() {
+        return db.query(DB_TABLE, new String[]
+                        {
+                                COL_ROWID,
+                                COL_NAME,
+                                COL_VENUE,
+                                COL_DATE,
+                                COL_COMMENTS
+                        },
+                null,
+                null,
+                null,
+                null,
+                COL_VENUE+ " ASC"
+        );
+    }
+
+    public Cursor getAllConcertsVenueDESC() {
+        return db.query(DB_TABLE, new String[]
+                        {
+                                COL_ROWID,
+                                COL_NAME,
+                                COL_VENUE,
+                                COL_DATE,
+                                COL_COMMENTS
+                        },
+                null,
+                null,
+                null,
+                null,
+                COL_VENUE+ " DESC"
+        );
     }
 
     public Cursor getConcert(long ROW_ID) throws SQLException
