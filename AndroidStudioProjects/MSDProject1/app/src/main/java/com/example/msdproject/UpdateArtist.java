@@ -1,3 +1,13 @@
+/*
+* Brian Briscoe
+* C12468098
+* DT211/3
+* MSD Project Semester 1
+*
+* UpdateArtist.java
+*
+*/
+
 package com.example.msdproject;
 
 import android.app.Activity;
@@ -34,7 +44,8 @@ public class UpdateArtist extends Activity {
 
         Button setDate = (Button)findViewById(R.id.setDateButton);
 
-        setDate.setOnClickListener(new View.OnClickListener() {
+        setDate.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 showDialog(dialogID);
@@ -52,6 +63,8 @@ public class UpdateArtist extends Activity {
             {
                 do
                 {
+                    //As with the ViewArtist class, this method queries the database using the "num"
+                    //value and assigns the information to the EditText boxes
                     String name = (c.getString(1));
                     String venue = (c.getString(2));
                     String date = (c.getString(3));
@@ -63,6 +76,10 @@ public class UpdateArtist extends Activity {
                     dateTxt = (TextView)findViewById(R.id.editDate);
                     commentsTxt = (EditText)findViewById(R.id.updateComments);
 
+
+                    //Here the date string (in the format DD/MM/YYYY) is being split in to 3 different
+                    //integer values by the '/'. The month integer value is then passed into the getMonth
+                    //method which returns the string value of that month ie. 1 = January
                     String[] splitDate = date.split("/");
                     String strDay = splitDate[0];
                     String strMonth = splitDate[1];
@@ -84,6 +101,7 @@ public class UpdateArtist extends Activity {
                         @Override
                         public void onClick(View v)
                         {
+                            //This if-statement ensures all text fields are not empty before proceeding
                             if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
                                     dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty() )
                             {
@@ -112,7 +130,9 @@ public class UpdateArtist extends Activity {
         }
     }
 
-    //Parts of the following code were taken from a YouTube tutorial
+    //Parts of the following 2 methods were taken from a YouTube tutorial
+
+    //This method creates a calendar pop up on the screen for selecting the date
     protected Dialog onCreateDialog(int id)
     {
         switch (id)
@@ -123,6 +143,7 @@ public class UpdateArtist extends Activity {
         return null;
     }
 
+    //This method assigns the date set in the previous method to the TextView dateTxt
     private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener()
     {
         @Override

@@ -1,3 +1,13 @@
+/*
+* Brian Briscoe
+* C12468098
+* DT211/3
+* MSD Project Semester 1
+*
+* DBManager.java
+*
+*/
+
 package com.example.msdproject;
 
 import android.content.ContentValues;
@@ -96,6 +106,10 @@ public class DBManager {
 
     }
 
+    //Here I have 4 different getAllConcert methods. This is because there is a spinner in my
+    //MainActivity class that gives 4 possible list sort options, Artist - Ascending, Artist - Descending
+    //Venue - Ascending and Venue - Descending. Having 4 methods here allows me to populated the
+    //ListView differently based on what spinner item is selected
     public Cursor getAllConcertsNameASC() {
         return db.query(DB_TABLE, new String[]
                         {
@@ -197,11 +211,5 @@ public class DBManager {
         updateValues.put(COL_DATE, date);
         updateValues.put(COL_COMMENTS, comments);
         return db.update(DB_TABLE, updateValues, "name='"+ name+"'", null) > 0;
-    }
-
-    public void reset () throws SQLException {
-        db.delete(DB_TABLE, null, null);
-        db.close();
-        this.DBHelper.onCreate(this.db);
     }
 }

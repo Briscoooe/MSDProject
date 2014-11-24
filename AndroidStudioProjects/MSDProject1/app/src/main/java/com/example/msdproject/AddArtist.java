@@ -1,3 +1,13 @@
+/*
+* Brian Briscoe
+* C12468098
+* DT211/3
+* MSD Project Semester 1
+*
+* AddArtist.java
+*
+*/
+
 package com.example.msdproject;
 
 import android.app.Activity;
@@ -9,7 +19,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -18,7 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class AddArtist extends Activity {
@@ -41,6 +49,7 @@ public class AddArtist extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_artist);
 
+        //This sets the default day on the calendar pop up to the current day
         Calendar today = Calendar.getInstance();
         y = today.get(Calendar.YEAR);
         m = today.get(Calendar.MONTH);
@@ -50,7 +59,8 @@ public class AddArtist extends Activity {
 
         Button setDate = (Button)findViewById(R.id.setDateButton);
 
-        setDate.setOnClickListener(new View.OnClickListener() {
+        setDate.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 showDialog(dialogID);
@@ -76,7 +86,9 @@ public class AddArtist extends Activity {
         });
     }
 
-    //Some of the following code was taken from a YouTube tutorial
+    //Parts of the following 2 methods were taken from a YouTube tutorial
+
+    //This method creates a calendar pop up on the screen for selecting the date
     protected Dialog onCreateDialog(int id)
     {
         switch (id)
@@ -87,6 +99,7 @@ public class AddArtist extends Activity {
         return null;
     }
 
+    //This method assigns the date set in the previous method to the TextView dateTxt
     private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener()
     {
         @Override
@@ -108,6 +121,7 @@ public class AddArtist extends Activity {
         dateTxt = (TextView)findViewById(R.id.editDate);
         commentsTxt = (EditText)findViewById(R.id.editComments);
 
+        //This if-statement ensures that all text boxes are filled before proceeding
         if (nameTxt.getText().toString().isEmpty()  || venueTxt.getText().toString().isEmpty() ||
             dateTxt.getText().toString().isEmpty() || commentsTxt.getText().toString().isEmpty())
         {
@@ -129,6 +143,8 @@ public class AddArtist extends Activity {
             m = Integer.parseInt(strMonth);
             y = Integer.parseInt(strYear);
 
+            //I was having a lot of trouble getting the same date to show up in the calendar view, the textview
+            //and the database so this is the solution  I came up with
             String dateMinusOne = (d + "/" + (m - 1) + "/" +y);
 
             long id = db.insertConcert(nameTxt.getText().toString(),
@@ -144,6 +160,12 @@ public class AddArtist extends Activity {
                 {
                     switch (option)
                     {
+                        //This section of code is the "Yes" answer to a dialog box.
+                        //The question is "Would you like to add this concert to the calendar?"
+                        //and if yes is selected, the values of the EditText boxes in this activity
+                        //are passed into the new activity which opens the default calendar app and creates
+                        //a new event. This new event then contains all of the information that
+                        //was typed in to this activity as a result of the putExtra statements
                         case DialogInterface.BUTTON_POSITIVE:
                             Intent intent = new Intent(Intent.ACTION_EDIT);
                             intent.setType("vnd.android.cursor.item/event");
