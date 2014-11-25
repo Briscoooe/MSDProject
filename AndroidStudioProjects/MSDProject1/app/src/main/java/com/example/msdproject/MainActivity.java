@@ -6,6 +6,14 @@
 *
 * MainActivity.java
 *
+* Features:
+* Add, Edit, View and Delete Database Items
+* Sort list by Name or Venue A-Z or Z-A
+* Set date by calendar date picker which adds automatically to textview
+* Option to add date to calendar app, while passing details
+* Play sound on addition
+* Search for artist on youtube
+* View artist on calendar if set
 */
 
 package com.example.msdproject;

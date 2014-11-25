@@ -11,12 +11,11 @@
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
     <android:uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <android:uses-permission
-        android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -40,14 +39,6 @@
             android:name="com.example.msdproject.UpdateArtist"
             android:label="@string/title_activity_update_concert" >
             android:noHistory="true"
-        </activity>
-        <activity
-            android:name="com.example.msdproject.DeleteArtist"
-            android:label="@string/title_activity_delete_concert" >
-        </activity>
-        <activity
-            android:name="com.example.msdproject.Database"
-            android:label="@string/title_activity_database" >
         </activity>
         <activity
             android:name="com.example.msdproject.DBManager"

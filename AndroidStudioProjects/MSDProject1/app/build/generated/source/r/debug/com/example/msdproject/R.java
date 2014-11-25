@@ -1365,7 +1365,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
-        public static final int action_settings=0x7f090062;
+        public static final int action_settings=0x7f090064;
         public static final int activity_chooser_view_content=0x7f090023;
         public static final int addButton=0x7f09004e;
         public static final int addConcertButton=0x7f090051;
@@ -1399,10 +1399,12 @@ containing a value of this type.
         public static final int icon=0x7f090028;
         public static final int ifRoom=0x7f09000e;
         public static final int image=0x7f090025;
+        public static final int imageView=0x7f090060;
+        public static final int imageView2=0x7f090063;
         public static final int likeTitle=0x7f09004f;
-        public static final int listDate=0x7f090061;
+        public static final int listDate=0x7f090062;
         public static final int listMode=0x7f090001;
-        public static final int listName=0x7f090060;
+        public static final int listName=0x7f090061;
         public static final int listText=0x7f09005f;
         public static final int list_item=0x7f090027;
         public static final int listenButton=0x7f090058;
@@ -1492,7 +1494,8 @@ containing a value of this type.
         public static final int menu_view_artist=0x7f0e0001;
     }
     public static final class raw {
-        public static final int guitar=0x7f050000;
+        public static final int delete=0x7f050000;
+        public static final int guitar=0x7f050001;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0c0000;
