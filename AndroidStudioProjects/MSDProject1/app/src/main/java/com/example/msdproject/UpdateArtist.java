@@ -61,7 +61,6 @@ public class UpdateArtist extends Activity {
 
         //These following lines query the database for all of the venues in the database and
         //and fill an array with these values to be used in an AutoComplete text view
-
         venueTxt = (AutoCompleteTextView)findViewById(R.id.updateVenue);
 
         try

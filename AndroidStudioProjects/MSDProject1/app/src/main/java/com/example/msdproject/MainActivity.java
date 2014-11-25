@@ -14,6 +14,10 @@
 * Play sound on addition
 * Search for artist on youtube
 * View artist on calendar if set
+* Dialog boxes
+* Error checking
+* Toast message
+* Autocomplete with database content
 */
 
 package com.example.msdproject;
@@ -25,6 +29,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.view.View;
