@@ -185,16 +185,7 @@ public class DBManager {
     //containing all venues to be used in the autocomplete text boxes
     public String[] getAllVenues()
     {
-        Cursor c = this.db.query(DB_TABLE, new String[]
-                {
-                        COL_VENUE
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-        );
+        Cursor c = db.rawQuery("select distinct venue from Concert_Info", null);
 
         if(c.getCount() >0)
         {
