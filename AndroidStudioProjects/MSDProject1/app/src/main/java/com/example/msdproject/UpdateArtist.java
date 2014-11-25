@@ -15,6 +15,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -38,11 +39,15 @@ public class UpdateArtist extends Activity {
     public TextView dateTxt;
     public EditText commentsTxt;
 
+    MediaPlayer guitarSound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_artist);
+
+        guitarSound = MediaPlayer.create(this, R.raw.guitar);
 
         Button setDate = (Button)findViewById(R.id.setDateButton);
 
@@ -188,6 +193,7 @@ public class UpdateArtist extends Activity {
             db.open();
             db.updateConcert(passedName,passedVenue, passedDate, passedComments);
             Toast.makeText(UpdateArtist.this, "Concert Updated!", Toast.LENGTH_LONG).show();
+            guitarSound.start();
             super.finish();
         }
 

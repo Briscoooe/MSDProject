@@ -51,6 +51,8 @@ public class AddArtist extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_artist);
 
+        guitarSound = MediaPlayer.create(this, R.raw.guitar);
+
         //This sets the default day on the calendar pop up to the current day
         Calendar today = Calendar.getInstance();
         y = today.get(Calendar.YEAR);
@@ -76,8 +78,6 @@ public class AddArtist extends Activity {
         }
 
         db.close();
-
-        guitarSound = MediaPlayer.create(this, R.raw.guitar);
 
         Button setDate = (Button)findViewById(R.id.setDateButton);
 
