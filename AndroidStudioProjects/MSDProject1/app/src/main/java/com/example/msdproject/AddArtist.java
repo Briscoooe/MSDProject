@@ -4,7 +4,7 @@
 * DT211/3
 * MSD Project Semester 1
 *
-* AddArtist.java
+* AddArtist.ava
 *
 */
 
@@ -20,6 +20,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -37,7 +39,7 @@ public class AddArtist extends Activity {
     int y, m, d;
 
     public EditText nameTxt;
-    public EditText venueTxt;
+    public AutoCompleteTextView venueTxt;
     public TextView dateTxt;
     public EditText commentsTxt;
 
@@ -54,6 +56,26 @@ public class AddArtist extends Activity {
         y = today.get(Calendar.YEAR);
         m = today.get(Calendar.MONTH);
         d = today.get(Calendar.DAY_OF_MONTH);
+
+        //These following lines query the database for all of the venues in the database and
+        //and fill an array with these values to be used in an AutoComplete text view
+        venueTxt = (AutoCompleteTextView)findViewById(R.id.editVenue);
+
+        try
+        {
+            db.open();
+            String[] venues = db.getAllVenues();
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, venues);
+            venueTxt.setAdapter(adapter);
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        db.close();
 
         guitarSound = MediaPlayer.create(this, R.raw.guitar);
 
@@ -116,8 +138,9 @@ public class AddArtist extends Activity {
 
     public void AddArtistButton () throws SQLException
     {
+
         nameTxt = (EditText)findViewById(R.id.editName);
-        venueTxt = (EditText)findViewById(R.id.editVenue);
+        venueTxt = (AutoCompleteTextView)findViewById(R.id.editVenue);
         dateTxt = (TextView)findViewById(R.id.editDate);
         commentsTxt = (EditText)findViewById(R.id.editComments);
 
@@ -176,7 +199,7 @@ public class AddArtist extends Activity {
                             intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY,
                                     false);
                             intent.putExtra(CalendarContract.Events.TITLE,
-                                    nameTxt.getText().toString());
+                                    nameTxt.getText().toString() + " Concert");
                             intent.putExtra(CalendarContract.Events.EVENT_LOCATION,
                                     venueTxt.getText().toString());
                             intent.putExtra(CalendarContract.Events.DESCRIPTION,

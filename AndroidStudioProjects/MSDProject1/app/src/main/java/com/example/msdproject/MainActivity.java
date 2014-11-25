@@ -92,7 +92,7 @@ public class MainActivity extends ListActivity {
     public void addData()
     {
         //This switch statements calls 1 of 4 possible getAllConcertsXXX methods in the
-        //DBManager class based on which spinner item was selected
+        //DBManager class based on which spinner item is currently selected
         switch (spinnerInt)
         {
             case 0:

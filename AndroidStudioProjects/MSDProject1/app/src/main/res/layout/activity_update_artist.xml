@@ -40,7 +40,7 @@ tools:context="${relativePackage}.${activityClass}" >
             android:id="@+id/venueTxt"
             android:layout_below="@id/updateName"
             android:text="@string/venue"/>
-        <EditText
+        <AutoCompleteTextView
             style="@style/tableEditText"
             android:id="@+id/updateVenue"
             android:layout_below="@id/venueTxt"/>

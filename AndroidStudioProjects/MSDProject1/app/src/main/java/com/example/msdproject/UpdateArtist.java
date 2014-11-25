@@ -17,6 +17,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -32,7 +34,7 @@ public class UpdateArtist extends Activity {
     int y, m, d;
 
     public EditText nameTxt;
-    public EditText venueTxt;
+    public AutoCompleteTextView venueTxt;
     public TextView dateTxt;
     public EditText commentsTxt;
 
@@ -51,6 +53,27 @@ public class UpdateArtist extends Activity {
                 showDialog(dialogID);
             }
         });
+
+        //These following lines query the database for all of the venues in the database and
+        //and fill an array with these values to be used in an AutoComplete text view
+
+        venueTxt = (AutoCompleteTextView)findViewById(R.id.updateVenue);
+
+        try
+        {
+            db.open();
+            String[] venues = db.getAllVenues();
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, venues);
+            venueTxt.setAdapter(adapter);
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        db.close();
 
         Intent intent = getIntent();
         final long num = intent.getLongExtra("id", 1);
@@ -72,7 +95,7 @@ public class UpdateArtist extends Activity {
 
                     TextView titleTxt = (TextView)findViewById(R.id.updateTitle);
                     nameTxt = (EditText)findViewById(R.id.updateName);
-                    venueTxt = (EditText)findViewById(R.id.updateVenue);
+                    venueTxt = (AutoCompleteTextView)findViewById(R.id.updateVenue);
                     dateTxt = (TextView)findViewById(R.id.editDate);
                     commentsTxt = (EditText)findViewById(R.id.updateComments);
 

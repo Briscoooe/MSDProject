@@ -39,6 +39,9 @@ public class DBManager {
             "comments text not null, " +
             "date text not null);";
 
+    private static final String ALL_VENUES =
+            "select venue from Concert_Info";
+
     private  Context context;
 
     private DatabaseHelper DBHelper;
@@ -176,6 +179,39 @@ public class DBManager {
                 null,
                 COL_VENUE+ " DESC"
         );
+    }
+
+    //This method gets all entries in the "venue" column in the database and returns an array
+    //containing all venues to be used in the autocomplete text boxes
+    public String[] getAllVenues()
+    {
+        Cursor c = this.db.query(DB_TABLE, new String[]
+                {
+                        COL_VENUE
+                },
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        if(c.getCount() >0)
+        {
+            String[] str = new String[c.getCount()];
+            int i = 0;
+
+            while (c.moveToNext())
+            {
+                str[i] = c.getString(c.getColumnIndex(COL_VENUE));
+                i++;
+            }
+            return str;
+        }
+        else
+        {
+            return new String[] {};
+        }
     }
 
     public Cursor getConcert(long ROW_ID) throws SQLException

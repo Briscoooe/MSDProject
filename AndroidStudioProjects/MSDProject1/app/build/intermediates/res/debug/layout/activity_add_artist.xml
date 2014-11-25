@@ -40,7 +40,7 @@
             android:id="@+id/venueTxt"
             android:layout_below="@id/editName"
             android:text="@string/venue"/>
-        <EditText
+        <AutoCompleteTextView
             style="@style/tableEditText"
             android:id="@+id/editVenue"
             android:layout_below="@id/venueTxt"/>
